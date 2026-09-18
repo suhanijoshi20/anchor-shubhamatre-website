@@ -1,77 +1,38 @@
 import React from 'react';
-import { Camera, Play } from 'lucide-react';
-
-const galleryItems = [
-  {
-    title: "Grand Sangeet Night",
-    category: "Wedding",
-    image: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=80&w=800"
-  },
-  {
-    title: "Corporate Excellence Awards",
-    category: "Corporate",
-    image: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&q=80&w=800"
-  },
-  {
-    title: "Live Concert Hosting",
-    category: "Concert",
-    image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80&w=800"
-  },
-  {
-    title: "Destination Wedding Anchor",
-    category: "Wedding",
-    image: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=800"
-  },
-  {
-    title: "Brand Launch Event",
-    category: "Corporate",
-    image: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&q=80&w=800"
-  },
-  {
-    title: "Celebrity Meet & Greet",
-    category: "Showcase",
-    image: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&q=80&w=800"
-  }
-];
 
 const Gallery = () => {
+  const photos = [
+    { title: "Sangeet Night Host", cat: "Weddings" },
+    { title: "Corporate Awards Gala", cat: "Corporate" },
+    { title: "Live Concert Energy", cat: "Concerts" },
+    { title: "Destination Show", cat: "Luxury" },
+    { title: "Interactive Audience Game", cat: "Engagement" },
+    { title: "Celebrity Interaction", cat: "VIP Events" }
+  ];
+
   return (
-    <section id="gallery" className="py-20 bg-zinc-950 text-white relative border-t border-zinc-800">
+    <section id="gallery" className="py-24 bg-gradient-to-b from-[#260812] via-[#4A1022] to-[#260812] text-[#FFF5EA]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight">
-            Event <span className="text-amber-400">Gallery</span>
+          <span className="text-[#D9A6A8] font-bold tracking-widest uppercase text-xs sm:text-sm bg-[#260812] border border-[#C98F8F]/30 px-4 py-1.5 rounded-full inline-block mb-3">
+            Moments On Stage
+          </span>
+          <h2 className="text-3xl sm:text-5xl font-extrabold text-[#FFF5EA]">
+            Event <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#C98F8F] to-[#E8D5C4]">Gallery</span>
           </h2>
-          <p className="text-gray-400 mt-3 text-lg">Glimpses of high-energy performances and luxury stages.</p>
-          <div className="w-24 h-1 bg-amber-500 mx-auto mt-4 rounded-full"></div>
+          <div className="w-20 h-1 bg-gradient-to-r from-[#C98F8F] to-[#D9A6A8] mx-auto mt-4 rounded-full"></div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {galleryItems.map((item, index) => (
-            <div 
-              key={index} 
-              className="relative group overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900 shadow-xl aspect-video cursor-pointer"
-            >
-              <img 
-                src={item.image} 
-                alt={item.title} 
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100"
-              />
-              
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
-
-              <div className="absolute bottom-0 left-0 right-0 p-6 flex flex-col justify-end">
-                <span className="text-xs font-semibold text-amber-400 tracking-widest uppercase mb-1">
-                  {item.category}
-                </span>
-                <h3 className="text-lg font-bold text-white group-hover:text-amber-300 transition-colors">
-                  {item.title}
-                </h3>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {photos.map((item, idx) => (
+            <div key={idx} className="relative group overflow-hidden rounded-2xl border border-[#C98F8F]/30 bg-[#260812] h-72">
+              <div className="w-full h-full bg-gradient-to-tr from-[#260812] via-[#4A1022] to-[#C98F8F]/20 flex items-center justify-center p-6 text-center group-hover:scale-105 transition-transform duration-500">
+                <span className="text-[#D9A6A8] font-semibold text-sm">[ Stage Photo Placeholder ]</span>
               </div>
-
-              <div className="absolute top-4 right-4 bg-amber-500/20 p-2 rounded-full backdrop-blur-sm border border-amber-500/30 text-amber-400 opacity-0 group-hover:opacity-100 transition-opacity">
-                <Camera size={18} />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#260812] via-[#260812]/70 to-transparent opacity-90 p-6 flex flex-col justify-end">
+                <span className="text-xs font-bold text-[#C98F8F] uppercase tracking-wider mb-1">{item.cat}</span>
+                <h3 className="text-lg font-bold text-[#FFF5EA]">{item.title}</h3>
               </div>
             </div>
           ))}
