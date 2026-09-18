@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Phone, Mail, MapPin, Send, Share2, Video, Globe } from 'lucide-react';
+import { Phone, Mail, MapPin, Send, Share2, Video } from 'lucide-react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: '', phone: '', eventType: '', eventDate: '', message: '' });
@@ -16,10 +16,10 @@ const Contact = () => {
         
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-5xl font-extrabold text-[#FFF5EA]">
-            Book <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#C98F8F] to-[#E8D5C4]">Your Dates</span>
+            Book <span className="text-[#C98F8F]">Your Dates</span>
           </h2>
           <p className="text-[#E8D5C4] mt-3 text-lg">Let's discuss how we can make your event unforgettable.</p>
-          <div className="w-20 h-1 bg-gradient-to-r from-[#C98F8F] to-[#D9A6A8] mx-auto mt-4 rounded-full"></div>
+          <div className="w-20 h-1 bg-[#C98F8F] mx-auto mt-4 rounded-full"></div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -140,7 +140,7 @@ const Contact = () => {
 
               <button 
                 type="submit" 
-                className="w-full bg-gradient-to-r from-[#C98F8F] to-[#D9A6A8] text-[#260812] font-bold py-4 rounded-xl hover:scale-[1.02] transition-transform duration-200 flex items-center justify-center gap-2 shadow-lg shadow-[#C98F8F]/20"
+                className="w-full bg-[#C98F8F] hover:bg-[#D9A6A8] text-[#260812] font-bold py-4 rounded-xl hover:scale-[1.02] transition-transform duration-200 flex items-center justify-center gap-2 shadow-lg shadow-[#C98F8F]/20"
               >
                 <Send size={18} />
                 <span>Send Enquiry Via WhatsApp</span>
