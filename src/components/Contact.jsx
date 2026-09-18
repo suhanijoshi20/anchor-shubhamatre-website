@@ -11,7 +11,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-24 bg-[#260812] text-[#FFF5EA] border-t border-[#C98F8F]/20">
+    <section id="contact" className="py-24 bg-[#260812] text-[#FFF5EA]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="text-center mb-16">
@@ -32,82 +32,82 @@ const Contact = () => {
 
             <div className="space-y-6">
               <div className="flex items-center gap-4">
-                <div className="p-3 bg-[#4A1022] border border-[#C98F8F]/40 rounded-full text-[#C98F8F]">
+                <div className="p-3 bg-[#4A1022] rounded-full text-[#C98F8F]">
                   <Phone size={22} />
                 </div>
                 <div>
-                  <div className="text-xs text-[#D9A6A8] uppercase font-semibold">Call / WhatsApp</div>
-                  <a href="tel:+91XXXXXXXXXX" className="text-lg font-semibold text-[#FFF5EA] hover:text-[#C98F8F]">+91 XXXXXXXXXX</a>
+                  <div className="text-xs text-[#E8D5C4] uppercase font-semibold">Call / WhatsApp</div>
+                  <a href="tel:+91XXXXXXXXXX" className="text-lg font-semibold text-[#FFF5EA] hover:text-[#D9A6A8]">+91 XXXXXXXXXX</a>
                 </div>
               </div>
 
               <div className="flex items-center gap-4">
-                <div className="p-3 bg-[#4A1022] border border-[#C98F8F]/40 rounded-full text-[#C98F8F]">
+                <div className="p-3 bg-[#4A1022] rounded-full text-[#C98F8F]">
                   <Mail size={22} />
                 </div>
                 <div>
-                  <div className="text-xs text-[#D9A6A8] uppercase font-semibold">Email Enquiries</div>
-                  <a href="mailto:info@anchorshubham.com" className="text-lg font-semibold text-[#FFF5EA] hover:text-[#C98F8F]">info@anchorshubham.com</a>
+                  <div className="text-xs text-[#E8D5C4] uppercase font-semibold">Email Enquiries</div>
+                  <a href="mailto:info@anchorshubham.com" className="text-lg font-semibold text-[#FFF5EA] hover:text-[#D9A6A8]">info@anchorshubham.com</a>
                 </div>
               </div>
 
               <div className="flex items-center gap-4">
-                <div className="p-3 bg-[#4A1022] border border-[#C98F8F]/40 rounded-full text-[#C98F8F]">
+                <div className="p-3 bg-[#4A1022] rounded-full text-[#C98F8F]">
                   <MapPin size={22} />
                 </div>
                 <div>
-                  <div className="text-xs text-[#D9A6A8] uppercase font-semibold">Location</div>
+                  <div className="text-xs text-[#E8D5C4] uppercase font-semibold">Location</div>
                   <div className="text-lg font-semibold text-[#FFF5EA]">India (Available Worldwide)</div>
                 </div>
               </div>
             </div>
 
-            <div className="pt-6 border-t border-[#C98F8F]/20">
-              <h4 className="text-xs font-semibold text-[#D9A6A8] uppercase mb-4">Connect With Me</h4>
+            <div className="pt-6 border-t border-[#E8D5C4]/20">
+              <h4 className="text-xs font-semibold text-[#E8D5C4] uppercase mb-4">Connect With Me</h4>
               <div className="flex gap-4">
-                <a href="#" className="p-3 bg-[#4A1022] border border-[#C98F8F]/30 hover:border-[#C98F8F] text-[#FFF5EA] rounded-full transition-colors flex items-center gap-2">
+                <a href="#" className="p-3 bg-[#4A1022] hover:bg-[#D9A6A8] hover:text-[#260812] text-[#FFF5EA] rounded-full transition-colors flex items-center gap-2">
                   <Share2 size={18} className="text-[#C98F8F]" />
                   <span className="text-xs font-semibold">Instagram</span>
                 </a>
-                <a href="#" className="p-3 bg-[#4A1022] border border-[#C98F8F]/30 hover:border-[#C98F8F] text-[#FFF5EA] rounded-full transition-colors flex items-center gap-2">
-                  <Video size={18} className="text-[#D9A6A8]" />
+                <a href="#" className="p-3 bg-[#4A1022] hover:bg-[#D9A6A8] hover:text-[#260812] text-[#FFF5EA] rounded-full transition-colors flex items-center gap-2">
+                  <Video size={18} className="text-[#C98F8F]" />
                   <span className="text-xs font-semibold">YouTube</span>
                 </a>
               </div>
             </div>
           </div>
 
-          <div className="bg-[#4A1022]/40 p-8 rounded-2xl border border-[#C98F8F]/30 shadow-xl">
+          <div className="bg-[#4A1022] p-8 rounded-2xl border border-[#E8D5C4]/30 shadow-xl">
             <h3 className="text-xl font-bold text-[#FFF5EA] mb-6">Send Event Enquiry</h3>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label className="block text-xs font-semibold uppercase text-[#D9A6A8] mb-1">Your Name</label>
+                <label className="block text-xs font-semibold uppercase text-[#E8D5C4] mb-1">Your Name</label>
                 <input 
                   type="text" 
                   required
                   placeholder="Rahul Sharma"
-                  className="w-full bg-[#260812] border border-[#C98F8F]/30 rounded-lg px-4 py-3 text-[#FFF5EA] focus:outline-none focus:border-[#C98F8F]"
+                  className="w-full bg-[#260812] border border-[#E8D5C4]/30 rounded-lg px-4 py-3 text-[#FFF5EA] focus:outline-none focus:border-[#C98F8F]"
                   onChange={(e) => setFormData({...formData, name: e.target.value})}
                 />
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-semibold uppercase text-[#D9A6A8] mb-1">Phone Number</label>
+                  <label className="block text-xs font-semibold uppercase text-[#E8D5C4] mb-1">Phone Number</label>
                   <input 
                     type="tel" 
                     required
                     placeholder="+91 9876543210"
-                    className="w-full bg-[#260812] border border-[#C98F8F]/30 rounded-lg px-4 py-3 text-[#FFF5EA] focus:outline-none focus:border-[#C98F8F]"
+                    className="w-full bg-[#260812] border border-[#E8D5C4]/30 rounded-lg px-4 py-3 text-[#FFF5EA] focus:outline-none focus:border-[#C98F8F]"
                     onChange={(e) => setFormData({...formData, phone: e.target.value})}
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-semibold uppercase text-[#D9A6A8] mb-1">Event Type</label>
+                  <label className="block text-xs font-semibold uppercase text-[#E8D5C4] mb-1">Event Type</label>
                   <select 
                     required
                     defaultValue=""
-                    className="w-full bg-[#260812] border border-[#C98F8F]/30 rounded-lg px-4 py-3 text-[#FFF5EA] focus:outline-none focus:border-[#C98F8F]"
+                    className="w-full bg-[#260812] border border-[#E8D5C4]/30 rounded-lg px-4 py-3 text-[#FFF5EA] focus:outline-none focus:border-[#C98F8F]"
                     onChange={(e) => setFormData({...formData, eventType: e.target.value})}
                   >
                     <option value="" disabled>Select Event</option>
@@ -119,28 +119,28 @@ const Contact = () => {
               </div>
 
               <div>
-                <label className="block text-xs font-semibold uppercase text-[#D9A6A8] mb-1">Event Date</label>
+                <label className="block text-xs font-semibold uppercase text-[#E8D5C4] mb-1">Event Date</label>
                 <input 
                   type="date" 
                   required
-                  className="w-full bg-[#260812] border border-[#C98F8F]/30 rounded-lg px-4 py-3 text-[#FFF5EA] focus:outline-none focus:border-[#C98F8F]"
+                  className="w-full bg-[#260812] border border-[#E8D5C4]/30 rounded-lg px-4 py-3 text-[#FFF5EA] focus:outline-none focus:border-[#C98F8F]"
                   onChange={(e) => setFormData({...formData, eventDate: e.target.value})}
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-semibold uppercase text-[#D9A6A8] mb-1">Message</label>
+                <label className="block text-xs font-semibold uppercase text-[#E8D5C4] mb-1">Message</label>
                 <textarea 
                   rows="3" 
                   placeholder="Tell us about venue, gathering, etc."
-                  className="w-full bg-[#260812] border border-[#C98F8F]/30 rounded-lg px-4 py-3 text-[#FFF5EA] focus:outline-none focus:border-[#C98F8F]"
+                  className="w-full bg-[#260812] border border-[#E8D5C4]/30 rounded-lg px-4 py-3 text-[#FFF5EA] focus:outline-none focus:border-[#C98F8F]"
                   onChange={(e) => setFormData({...formData, message: e.target.value})}
                 ></textarea>
               </div>
 
               <button 
                 type="submit" 
-                className="w-full bg-[#C98F8F] hover:bg-[#D9A6A8] text-[#260812] font-bold py-4 rounded-xl hover:scale-[1.02] transition-transform duration-200 flex items-center justify-center gap-2 shadow-lg shadow-[#C98F8F]/20"
+                className="w-full bg-[#C98F8F] hover:bg-[#D9A6A8] text-[#260812] font-bold py-4 rounded-xl transition-all duration-200 flex items-center justify-center gap-2 shadow-lg"
               >
                 <Send size={18} />
                 <span>Send Enquiry Via WhatsApp</span>
@@ -150,7 +150,7 @@ const Contact = () => {
 
         </div>
 
-        <div className="mt-20 pt-8 border-t border-[#C98F8F]/20 text-center text-sm text-[#E8D5C4]/70">
+        <div className="mt-20 pt-8 border-t border-[#E8D5C4]/20 text-center text-sm text-[#E8D5C4]/70">
           <p>© {new Date().getFullYear()} Anchor Shubham Atre. All Rights Reserved.</p>
         </div>
 

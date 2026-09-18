@@ -11,26 +11,26 @@ const Gallery = () => {
   ];
 
   return (
-    <section id="gallery" className="py-24 bg-gradient-to-b from-[#260812] via-[#4A1022] to-[#260812] text-[#FFF5EA]">
+    <section id="gallery" className="py-24 bg-[#E8D5C4]/30 text-[#260812]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="text-center mb-16">
-          <span className="text-[#D9A6A8] font-bold tracking-widest uppercase text-xs sm:text-sm bg-[#260812] border border-[#C98F8F]/30 px-4 py-1.5 rounded-full inline-block mb-3">
+          <span className="text-[#4A1022] font-bold tracking-widest uppercase text-xs sm:text-sm bg-[#E8D5C4] px-4 py-1.5 rounded-full inline-block mb-3 border border-[#E8D5C4]">
             Moments On Stage
           </span>
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-[#FFF5EA]">
-            Event <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#C98F8F] to-[#E8D5C4]">Gallery</span>
+          <h2 className="text-3xl sm:text-5xl font-extrabold text-[#4A1022]">
+            Event <span className="text-[#C98F8F]">Gallery</span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-[#C98F8F] to-[#D9A6A8] mx-auto mt-4 rounded-full"></div>
+          <div className="w-20 h-1 bg-[#C98F8F] mx-auto mt-4 rounded-full"></div>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {photos.map((item, idx) => (
-            <div key={idx} className="relative group overflow-hidden rounded-2xl border border-[#C98F8F]/30 bg-[#260812] h-72">
-              <div className="w-full h-full bg-gradient-to-tr from-[#260812] via-[#4A1022] to-[#C98F8F]/20 flex items-center justify-center p-6 text-center group-hover:scale-105 transition-transform duration-500">
-                <span className="text-[#D9A6A8] font-semibold text-sm">[ Stage Photo Placeholder ]</span>
+            <div key={idx} className="relative group overflow-hidden rounded-2xl border-2 border-[#E8D5C4] bg-[#FFF5EA] h-72 shadow-md">
+              <div className="w-full h-full bg-[#E8D5C4]/50 flex items-center justify-center p-6 text-center group-hover:scale-105 transition-transform duration-500">
+                <span className="text-[#4A1022] font-semibold text-sm">[ Stage Photo Placeholder ]</span>
               </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-[#260812] via-[#260812]/70 to-transparent opacity-90 p-6 flex flex-col justify-end">
+              <div className="absolute inset-0 bg-[#260812]/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-end text-[#FFF5EA]">
                 <span className="text-xs font-bold text-[#C98F8F] uppercase tracking-wider mb-1">{item.cat}</span>
                 <h3 className="text-lg font-bold text-[#FFF5EA]">{item.title}</h3>
               </div>
