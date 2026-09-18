@@ -1,1 +1,12 @@
 @import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-deep-wine: #260812;
+    --bg-burgundy: #4A1022;
+    --accent-rose-gold: #C98F8F;
+    --accent-dusty-rose: #D9A6A8;
+    --bg-cream: #FFF5EA;
+    --bg-nude-beige: #E8D5C4;
+  }
+}
