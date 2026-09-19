@@ -2,38 +2,38 @@ import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-// Stylish Mic with 'S' Shaped Wire Badge
-const SMicBadge = () => (
+// Big & Bold Mic Badge with 'S' Shaped Wire
+const SMicBadgeLarge = () => (
   <svg
-    viewBox="0 0 44 44"
-    width="32"
-    height="32"
+    viewBox="0 0 48 48"
+    width="42"
+    height="42"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
-    className="drop-shadow-md"
+    className="drop-shadow-lg"
   >
-    {/* Outer Glowing Ring */}
-    <circle cx="22" cy="22" r="20" fill="#4A1022" stroke="#C98F8F" strokeWidth="2" />
+    {/* Outer Big Circle Background */}
+    <circle cx="24" cy="24" r="22" fill="#4A1022" stroke="#C98F8F" strokeWidth="2.5" />
 
-    {/* Mic Head Grid */}
-    <rect x="18" y="8" width="8" height="11" rx="4" fill="#D9A6A8" stroke="#260812" strokeWidth="0.8" />
-    <line x1="18" y1="11" x2="26" y2="11" stroke="#260812" strokeWidth="0.8" />
-    <line x1="18" y1="14" x2="26" y2="14" stroke="#260812" strokeWidth="0.8" />
+    {/* Big Mic Metallic Grid */}
+    <rect x="19" y="8" width="10" height="13" rx="5" fill="#D9A6A8" stroke="#260812" strokeWidth="1" />
+    <line x1="19" y1="11" x2="29" y2="11" stroke="#260812" strokeWidth="1" />
+    <line x1="19" y1="15" x2="29" y2="15" stroke="#260812" strokeWidth="1" />
 
-    {/* Metallic Center Band */}
-    <rect x="17.5" y="18" width="9" height="2" rx="0.5" fill="#FFF5EA" />
+    {/* Bright Metallic Middle Ring */}
+    <rect x="18" y="20" width="12" height="2.5" rx="0.5" fill="#FFF5EA" />
 
     {/* Mic Body Handle */}
-    <path d="M19 20L20 27H24L25 20H19Z" fill="#260812" stroke="#C98F8F" strokeWidth="0.5" />
+    <path d="M20 22.5L21 30H27L28 22.5H20Z" fill="#260812" stroke="#C98F8F" strokeWidth="0.8" />
 
-    {/* Cord Base Connector */}
-    <rect x="21" y="27" width="2" height="2" fill="#C98F8F" />
+    {/* Cord Connector */}
+    <rect x="22.5" y="30" width="3" height="2.5" fill="#C98F8F" />
 
-    {/* 'S' SHAPED WIRE (Denoting 'S' for Shubham) */}
+    {/* Bold 'S' SHAPED WIRE */}
     <path
-      d="M22 29 C27 30, 27 33, 22 34 C17 35, 17 38, 22 39"
+      d="M24 32.5 C30 33.5, 30 37, 24 38 C18 39, 18 42.5, 24 43.5"
       stroke="#FFF5EA"
-      strokeWidth="2.2"
+      strokeWidth="2.8"
       strokeLinecap="round"
       fill="none"
     />
@@ -78,7 +78,7 @@ const Navbar = () => {
           {/* Logo / Name Section */}
           <a href="#home" className="flex items-center gap-3 group">
             
-            {/* STEP 2: Left Side se Jump karke aane wala S-Wire Mic Badge */}
+            {/* STEP 2: Left Side se Jump karke aane wala Bada Mic Logo */}
             <motion.div
               initial={{ x: -60, opacity: 0, scale: 0.5 }}
               animate={{ x: 0, opacity: 1, scale: [1, 1.2, 1] }}
@@ -90,7 +90,7 @@ const Navbar = () => {
               whileHover={{ rotate: 12, scale: 1.15 }}
               className="flex items-center justify-center cursor-pointer shrink-0"
             >
-              <SMicBadge />
+              <SMicBadgeLarge />
             </motion.div>
 
             {/* STEP 1: Upar se Jump / Bounce karke pehle aane wala Name Text */}
