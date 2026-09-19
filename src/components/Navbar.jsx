@@ -1,6 +1,42 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Mic } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { motion } from 'framer-motion';
+
+// Image style realistic mic SVG component
+const RealisticMicIcon = ({ className = "" }) => (
+  <svg
+    viewBox="0 0 24 24"
+    width="22"
+    height="22"
+    fill="currentColor"
+    className={className}
+  >
+    {/* Mic Mesh Head */}
+    <path
+      d="M12 2C9.79 2 8 3.79 8 6V11C8 13.21 9.79 15 12 15C14.21 15 16 13.21 16 11V6C16 3.79 14.21 2 12 2Z"
+      fill="#D9A6A8"
+    />
+    {/* Mesh Line Details */}
+    <path
+      d="M8.5 6.5H15.5M8.5 8.5H15.5M9.5 4.5H14.5"
+      stroke="#260812"
+      strokeWidth="0.6"
+      strokeLinecap="round"
+    />
+    {/* Metallic Ring */}
+    <rect x="7.8" y="10.2" width="8.4" height="1.8" rx="0.5" fill="#FFF5EA" />
+    {/* Mic Handle */}
+    <path
+      d="M9.5 12L10.5 20H13.5L14.5 12H9.5Z"
+      fill="#4A1022"
+    />
+    {/* Bottom Cord Base */}
+    <path
+      d="M11 20H13V22C13 22.5 12.5 23 12 23C11.5 23 11 22.5 11 22V20Z"
+      fill="#C98F8F"
+    />
+  </svg>
+);
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -38,24 +74,24 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           
           {/* Logo / Name Section */}
-          <a href="#home" className="flex items-center gap-2 group">
+          <a href="#home" className="flex items-center gap-2.5 group">
             
-            {/* 2ND STEP: Left Side se Jump / Slide karke aane wala Mic Logo (Text ke baad aayega delay: 0.5s) */}
+            {/* STEP 2: Left Side se Jump / Slide karke aane wala Realistic Mic Logo */}
             <motion.div
-              initial={{ x: -60, opacity: 0, scale: 0.5 }}
-              animate={{ x: 0, opacity: 1, scale: [1, 1.25, 1] }}
+              initial={{ x: -60, opacity: 0, scale: 0.5, rotate: -25 }}
+              animate={{ x: 0, opacity: 1, scale: [1, 1.2, 1], rotate: -12 }}
               transition={{
                 x: { type: 'spring', stiffness: 140, damping: 10, delay: 0.5 },
                 scale: { duration: 0.6, repeat: Infinity, repeatDelay: 3.5, ease: 'easeInOut' },
                 opacity: { duration: 0.3 }
               }}
-              whileHover={{ rotate: -15, scale: 1.2 }}
-              className="p-1.5 rounded-full bg-[#4A1022] text-[#C98F8F] shadow-md border border-[#C98F8F]/40 flex items-center justify-center cursor-pointer"
+              whileHover={{ rotate: 0, scale: 1.25 }}
+              className="p-2 rounded-xl bg-gradient-to-br from-[#4A1022] to-[#260812] shadow-lg border border-[#C98F8F]/50 flex items-center justify-center cursor-pointer"
             >
-              <Mic size={18} className="text-[#C98F8F]" />
+              <RealisticMicIcon />
             </motion.div>
 
-            {/* 1ST STEP: Upar se Jump / Bounce karke sabse pehle aane wala Name Text (delay: 0.1s) */}
+            {/* STEP 1: Upar se Jump / Bounce karke pehle aane wala Name Text */}
             <motion.span
               initial={{ y: -60, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
