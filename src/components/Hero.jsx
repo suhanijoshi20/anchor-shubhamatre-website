@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { MessageCircle, Phone, Sparkles } from 'lucide-react';
 import { motion, useInView } from 'framer-motion';
 
-// Animated Number Count-Up Component
+// Number Count-Up Component
 const Counter = ({ from = 0, to, duration = 2, suffix = "" }) => {
   const [count, setCount] = useState(from);
   const ref = React.useRef(null);
@@ -49,7 +49,7 @@ const Hero = () => {
           <span>Celebrity Anchor & Luxury Event Emcee</span>
         </motion.div>
 
-        {/* Heading */}
+        {/* Main Heading */}
         <motion.h1 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -70,9 +70,9 @@ const Hero = () => {
           className="max-w-2xl mx-auto text-base sm:text-lg text-[#260812]/80 mb-10 leading-relaxed font-normal tracking-wide"
         >
           Corporate Shows • Celebrity Weddings • Concerts • High-Energy Sangeet Nights
-        </p>
+        </motion.p>
 
-        {/* Action Buttons */}
+        {/* Call-to-action Buttons */}
         <motion.div 
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -102,10 +102,10 @@ const Hero = () => {
           </motion.a>
         </motion.div>
 
-        {/* Pop-up Animated Stats Cards Section */}
+        {/* Pop-up Animated Stats Cards */}
         <div className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-4xl mx-auto border-t border-[#E8D5C4] pt-10">
           
-          {/* Card 1 - Pop-up */}
+          {/* Card 1: 500+ Shows Hosted */}
           <motion.div 
             initial={{ scale: 0, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
@@ -127,7 +127,7 @@ const Hero = () => {
             </div>
           </motion.div>
 
-          {/* Card 2 - Pop-up */}
+          {/* Card 2: 5+ Years Experience */}
           <motion.div 
             initial={{ scale: 0, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
@@ -149,7 +149,7 @@ const Hero = () => {
             </div>
           </motion.div>
 
-          {/* Card 3 - Pop-up */}
+          {/* Card 3: 100% Client Satisfaction */}
           <motion.div 
             initial={{ scale: 0, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
