@@ -20,7 +20,7 @@ const Navbar = () => {
               damping: 15,
               delay: 0.1 
             }}
-            className="flex-shrink-0"
+            className="shrink-0"
           >
             <a href="#" className="text-xl sm:text-2xl font-extrabold tracking-wider text-[#FFF5EA] inline-block">
               SHUBHAM <span className="text-[#C98F8F]">ATRE</span>

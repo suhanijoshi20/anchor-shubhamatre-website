@@ -70,7 +70,7 @@ const Hero = () => {
           className="max-w-2xl mx-auto text-base sm:text-lg text-[#260812]/80 mb-10 leading-relaxed font-normal tracking-wide"
         >
           Corporate Shows • Celebrity Weddings • Concerts • High-Energy Sangeet Nights
-        </p>
+        </motion.p>
 
         {/* Action Buttons */}
         <motion.div 
