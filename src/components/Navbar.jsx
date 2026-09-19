@@ -2,38 +2,40 @@ import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-// Image style realistic mic SVG component
-const RealisticMicIcon = ({ className = "" }) => (
+// Stylish Mic with 'S' Shaped Wire Badge
+const SMicBadge = () => (
   <svg
-    viewBox="0 0 24 24"
-    width="22"
-    height="22"
-    fill="currentColor"
-    className={className}
+    viewBox="0 0 44 44"
+    width="32"
+    height="32"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className="drop-shadow-md"
   >
-    {/* Mic Mesh Head */}
+    {/* Outer Glowing Ring */}
+    <circle cx="22" cy="22" r="20" fill="#4A1022" stroke="#C98F8F" strokeWidth="2" />
+
+    {/* Mic Head Grid */}
+    <rect x="18" y="8" width="8" height="11" rx="4" fill="#D9A6A8" stroke="#260812" strokeWidth="0.8" />
+    <line x1="18" y1="11" x2="26" y2="11" stroke="#260812" strokeWidth="0.8" />
+    <line x1="18" y1="14" x2="26" y2="14" stroke="#260812" strokeWidth="0.8" />
+
+    {/* Metallic Center Band */}
+    <rect x="17.5" y="18" width="9" height="2" rx="0.5" fill="#FFF5EA" />
+
+    {/* Mic Body Handle */}
+    <path d="M19 20L20 27H24L25 20H19Z" fill="#260812" stroke="#C98F8F" strokeWidth="0.5" />
+
+    {/* Cord Base Connector */}
+    <rect x="21" y="27" width="2" height="2" fill="#C98F8F" />
+
+    {/* 'S' SHAPED WIRE (Denoting 'S' for Shubham) */}
     <path
-      d="M12 2C9.79 2 8 3.79 8 6V11C8 13.21 9.79 15 12 15C14.21 15 16 13.21 16 11V6C16 3.79 14.21 2 12 2Z"
-      fill="#D9A6A8"
-    />
-    {/* Mesh Line Details */}
-    <path
-      d="M8.5 6.5H15.5M8.5 8.5H15.5M9.5 4.5H14.5"
-      stroke="#260812"
-      strokeWidth="0.6"
+      d="M22 29 C27 30, 27 33, 22 34 C17 35, 17 38, 22 39"
+      stroke="#FFF5EA"
+      strokeWidth="2.2"
       strokeLinecap="round"
-    />
-    {/* Metallic Ring */}
-    <rect x="7.8" y="10.2" width="8.4" height="1.8" rx="0.5" fill="#FFF5EA" />
-    {/* Mic Handle */}
-    <path
-      d="M9.5 12L10.5 20H13.5L14.5 12H9.5Z"
-      fill="#4A1022"
-    />
-    {/* Bottom Cord Base */}
-    <path
-      d="M11 20H13V22C13 22.5 12.5 23 12 23C11.5 23 11 22.5 11 22V20Z"
-      fill="#C98F8F"
+      fill="none"
     />
   </svg>
 );
@@ -74,21 +76,21 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           
           {/* Logo / Name Section */}
-          <a href="#home" className="flex items-center gap-2.5 group">
+          <a href="#home" className="flex items-center gap-3 group">
             
-            {/* STEP 2: Left Side se Jump / Slide karke aane wala Realistic Mic Logo */}
+            {/* STEP 2: Left Side se Jump karke aane wala S-Wire Mic Badge */}
             <motion.div
-              initial={{ x: -60, opacity: 0, scale: 0.5, rotate: -25 }}
-              animate={{ x: 0, opacity: 1, scale: [1, 1.2, 1], rotate: -12 }}
+              initial={{ x: -60, opacity: 0, scale: 0.5 }}
+              animate={{ x: 0, opacity: 1, scale: [1, 1.2, 1] }}
               transition={{
                 x: { type: 'spring', stiffness: 140, damping: 10, delay: 0.5 },
                 scale: { duration: 0.6, repeat: Infinity, repeatDelay: 3.5, ease: 'easeInOut' },
                 opacity: { duration: 0.3 }
               }}
-              whileHover={{ rotate: 0, scale: 1.25 }}
-              className="p-2 rounded-xl bg-[#4A1022] shadow-lg border border-[#C98F8F]/50 flex items-center justify-center cursor-pointer"
+              whileHover={{ rotate: 12, scale: 1.15 }}
+              className="flex items-center justify-center cursor-pointer shrink-0"
             >
-              <RealisticMicIcon />
+              <SMicBadge />
             </motion.div>
 
             {/* STEP 1: Upar se Jump / Bounce karke pehle aane wala Name Text */}
