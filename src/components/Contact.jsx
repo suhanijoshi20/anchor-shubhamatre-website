@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Phone, Mail, MapPin, Send, Instagram, ShieldCheck, Clock } from 'lucide-react';
+import { Phone, MapPin, Send, Instagram, ShieldCheck, Clock } from 'lucide-react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: '', phone: '', eventType: '', eventDate: '', message: '' });
@@ -25,19 +25,41 @@ const Contact = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           
           <div className="space-y-8">
-            <h3 className="text-2xl font-bold text-[#C98F8F]">Contact & Location</h3>
+            <h3 className="text-2xl font-bold text-[#C98F8F]">Contact & Social</h3>
             
             <div className="space-y-6">
+              {/* Phone / WhatsApp */}
               <div className="flex items-start gap-4">
                 <div className="p-3 bg-[#4A1022] rounded-full text-[#C98F8F]">
                   <Phone size={22} />
                 </div>
                 <div>
                   <div className="text-xs text-[#E8D5C4] uppercase font-semibold">Call / WhatsApp</div>
-                  <a href="tel:+916232091754" className="text-lg font-semibold text-[#FFF5EA] hover:text-[#D9A6A8]">+91 6232091754</a>
+                  <a href="https://wa.me/916232091754" target="_blank" rel="noreferrer" className="text-lg sm:text-xl font-bold text-[#FFF5EA] hover:text-[#D9A6A8] transition-colors">
+                    +91 6232091754
+                  </a>
                 </div>
               </div>
 
+              {/* Instagram Handle */}
+              <div className="flex items-start gap-4">
+                <div className="p-3 bg-[#4A1022] rounded-full text-[#C98F8F]">
+                  <Instagram size={22} />
+                </div>
+                <div>
+                  <div className="text-xs text-[#E8D5C4] uppercase font-semibold">Instagram</div>
+                  <a 
+                    href="https://www.instagram.com/Anchor_shubhamatre" 
+                    target="_blank" 
+                    rel="noreferrer"
+                    className="text-lg sm:text-xl font-bold text-[#FFF5EA] hover:text-[#D9A6A8] transition-colors block mt-0.5"
+                  >
+                    @Anchor_shubhamatre
+                  </a>
+                </div>
+              </div>
+
+              {/* Location */}
               <div className="flex items-start gap-4">
                 <div className="p-3 bg-[#4A1022] rounded-full text-[#C98F8F]">
                   <MapPin size={22} />
@@ -51,41 +73,29 @@ const Contact = () => {
                 </div>
               </div>
 
+              {/* Duration & Policy */}
               <div className="flex items-start gap-4">
                 <div className="p-3 bg-[#4A1022] rounded-full text-[#C98F8F]">
                   <Clock size={22} />
                 </div>
                 <div>
-                  <div className="text-xs text-[#E8D5C4] uppercase font-semibold">Performance Duration</div>
+                  <div className="text-xs text-[#E8D5C4] uppercase font-semibold">Performance & Booking</div>
                   <p className="text-sm font-medium text-[#FFF5EA] mt-1">
-                    Standard 4 Hours Performance (Customizable as per event)
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="p-3 bg-[#4A1022] rounded-full text-[#C98F8F]">
-                  <ShieldCheck size={22} />
-                </div>
-                <div>
-                  <div className="text-xs text-[#E8D5C4] uppercase font-semibold">Payment Policy</div>
-                  <p className="text-sm font-medium text-[#FFF5EA] mt-1">
-                    50% advance on booking • 50% on the event date
+                    Standard 4 Hours Performance • 50% Advance Booking
                   </p>
                 </div>
               </div>
             </div>
 
             <div className="pt-6 border-t border-[#E8D5C4]/20">
-              <h4 className="text-xs font-semibold text-[#E8D5C4] uppercase mb-4">Follow On Social Media</h4>
               <a 
-                href="https://www.instagram.com/anchorshubhamatre" 
+                href="https://www.instagram.com/Anchor_shubhamatre" 
                 target="_blank" 
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 p-3 bg-[#4A1022] hover:bg-[#D9A6A8] hover:text-[#260812] text-[#FFF5EA] rounded-full transition-colors"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-[#4A1022] hover:bg-[#D9A6A8] hover:text-[#260812] text-[#FFF5EA] rounded-full transition-all font-semibold text-sm shadow-md"
               >
                 <Instagram size={18} className="text-[#C98F8F]" />
-                <span className="text-xs font-semibold">@anchorshubhamatre</span>
+                <span>Follow @Anchor_shubhamatre</span>
               </a>
             </div>
           </div>
