@@ -107,7 +107,7 @@ const Navbar = () => {
                 isScrolled ? 'text-[#FFF5EA]' : 'text-[#4A1022]'
               }`}
             >
-              ᔕᕼᑌᗷᕼᗩᗰ ᗩTᖇE
+              ᗩᑎᑕᕼOᖇ ᔕᕼᑌᗷᕼᗩᗰ ᗩTᖇE
             </motion.span>
           </a>
 
