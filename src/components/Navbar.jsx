@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,11 +10,22 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           
-          <div className="flex-shrink-0">
-            <a href="#" className="text-xl sm:text-2xl font-extrabold tracking-wider text-[#FFF5EA]">
+          {/* Top Jump / Bounce Animated Logo */}
+          <motion.div 
+            initial={{ y: -100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ 
+              type: "spring", 
+              stiffness: 260, 
+              damping: 15,
+              delay: 0.1 
+            }}
+            className="flex-shrink-0"
+          >
+            <a href="#" className="text-xl sm:text-2xl font-extrabold tracking-wider text-[#FFF5EA] inline-block">
               SHUBHAM <span className="text-[#C98F8F]">ATRE</span>
             </a>
-          </div>
+          </motion.div>
 
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
@@ -21,7 +33,14 @@ const Navbar = () => {
               <a href="#about" className="text-[#FFF5EA] hover:text-[#D9A6A8] px-3 py-2 text-sm font-medium transition-colors">About</a>
               <a href="#services" className="text-[#FFF5EA] hover:text-[#D9A6A8] px-3 py-2 text-sm font-medium transition-colors">Services</a>
               <a href="#gallery" className="text-[#FFF5EA] hover:text-[#D9A6A8] px-3 py-2 text-sm font-medium transition-colors">Gallery</a>
-              <a href="#contact" className="bg-[#4A1022] hover:bg-[#C98F8F] text-[#FFF5EA] font-bold px-5 py-2.5 rounded-full text-sm transition-all duration-200 shadow-md">Book Now</a>
+              <motion.a 
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                href="#contact" 
+                className="bg-[#4A1022] hover:bg-[#C98F8F] text-[#FFF5EA] font-bold px-5 py-2.5 rounded-full text-sm transition-all duration-200 shadow-md inline-block"
+              >
+                Book Now
+              </motion.a>
             </div>
           </div>
 
