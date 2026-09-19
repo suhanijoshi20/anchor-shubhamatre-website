@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Phone, Mail, MapPin, Send, Share2, Video } from 'lucide-react';
+import { Phone, Mail, MapPin, Send, Instagram, ShieldCheck, Clock } from 'lucide-react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: '', phone: '', eventType: '', eventDate: '', message: '' });
@@ -7,7 +7,7 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const text = `Hi Anchor Shubham,%0A%0A*Name:* ${formData.name}%0A*Phone:* ${formData.phone}%0A*Event Type:* ${formData.eventType}%0A*Event Date:* ${formData.eventDate}%0A*Details:* ${formData.message}`;
-    window.open(`https://wa.me/91XXXXXXXXXX?text=${text}`, '_blank');
+    window.open(`https://wa.me/916232091754?text=${text}`, '_blank');
   };
 
   return (
@@ -18,67 +18,80 @@ const Contact = () => {
           <h2 className="text-3xl sm:text-5xl font-extrabold text-[#FFF5EA]">
             Book <span className="text-[#C98F8F]">Your Dates</span>
           </h2>
-          <p className="text-[#E8D5C4] mt-3 text-lg">Let's discuss how we can make your event unforgettable.</p>
+          <p className="text-[#E8D5C4] mt-3 text-lg">Indore Based • Available Domestic & Pan-India</p>
           <div className="w-20 h-1 bg-[#C98F8F] mx-auto mt-4 rounded-full"></div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           
           <div className="space-y-8">
-            <h3 className="text-2xl font-bold text-[#C98F8F]">Get In Touch</h3>
-            <p className="text-[#E8D5C4] leading-relaxed">
-              Available for corporate shows, luxury weddings, and concerts across India and worldwide.
-            </p>
-
+            <h3 className="text-2xl font-bold text-[#C98F8F]">Contact & Location</h3>
+            
             <div className="space-y-6">
-              <div className="flex items-center gap-4">
+              <div className="flex items-start gap-4">
                 <div className="p-3 bg-[#4A1022] rounded-full text-[#C98F8F]">
                   <Phone size={22} />
                 </div>
                 <div>
                   <div className="text-xs text-[#E8D5C4] uppercase font-semibold">Call / WhatsApp</div>
-                  <a href="tel:+91XXXXXXXXXX" className="text-lg font-semibold text-[#FFF5EA] hover:text-[#D9A6A8]">+91 XXXXXXXXXX</a>
+                  <a href="tel:+916232091754" className="text-lg font-semibold text-[#FFF5EA] hover:text-[#D9A6A8]">+91 6232091754</a>
                 </div>
               </div>
 
-              <div className="flex items-center gap-4">
-                <div className="p-3 bg-[#4A1022] rounded-full text-[#C98F8F]">
-                  <Mail size={22} />
-                </div>
-                <div>
-                  <div className="text-xs text-[#E8D5C4] uppercase font-semibold">Email Enquiries</div>
-                  <a href="mailto:info@anchorshubham.com" className="text-lg font-semibold text-[#FFF5EA] hover:text-[#D9A6A8]">info@anchorshubham.com</a>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-4">
+              <div className="flex items-start gap-4">
                 <div className="p-3 bg-[#4A1022] rounded-full text-[#C98F8F]">
                   <MapPin size={22} />
                 </div>
                 <div>
-                  <div className="text-xs text-[#E8D5C4] uppercase font-semibold">Location</div>
-                  <div className="text-lg font-semibold text-[#FFF5EA]">India (Available Worldwide)</div>
+                  <div className="text-xs text-[#E8D5C4] uppercase font-semibold">Office Address</div>
+                  <p className="text-sm font-medium text-[#FFF5EA] mt-1 leading-relaxed">
+                    Amba Molina, Gulmarg Parisar, Near Vidyasagar School,<br />
+                    Pipliyahana, Indore - 452016, Madhya Pradesh
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="p-3 bg-[#4A1022] rounded-full text-[#C98F8F]">
+                  <Clock size={22} />
+                </div>
+                <div>
+                  <div className="text-xs text-[#E8D5C4] uppercase font-semibold">Performance Duration</div>
+                  <p className="text-sm font-medium text-[#FFF5EA] mt-1">
+                    Standard 4 Hours Performance (Customizable as per event)
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="p-3 bg-[#4A1022] rounded-full text-[#C98F8F]">
+                  <ShieldCheck size={22} />
+                </div>
+                <div>
+                  <div className="text-xs text-[#E8D5C4] uppercase font-semibold">Payment Policy</div>
+                  <p className="text-sm font-medium text-[#FFF5EA] mt-1">
+                    50% advance on booking • 50% on the event date
+                  </p>
                 </div>
               </div>
             </div>
 
             <div className="pt-6 border-t border-[#E8D5C4]/20">
-              <h4 className="text-xs font-semibold text-[#E8D5C4] uppercase mb-4">Connect With Me</h4>
-              <div className="flex gap-4">
-                <a href="#" className="p-3 bg-[#4A1022] hover:bg-[#D9A6A8] hover:text-[#260812] text-[#FFF5EA] rounded-full transition-colors flex items-center gap-2">
-                  <Share2 size={18} className="text-[#C98F8F]" />
-                  <span className="text-xs font-semibold">Instagram</span>
-                </a>
-                <a href="#" className="p-3 bg-[#4A1022] hover:bg-[#D9A6A8] hover:text-[#260812] text-[#FFF5EA] rounded-full transition-colors flex items-center gap-2">
-                  <Video size={18} className="text-[#C98F8F]" />
-                  <span className="text-xs font-semibold">YouTube</span>
-                </a>
-              </div>
+              <h4 className="text-xs font-semibold text-[#E8D5C4] uppercase mb-4">Follow On Social Media</h4>
+              <a 
+                href="https://www.instagram.com/anchorshubhamatre" 
+                target="_blank" 
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 p-3 bg-[#4A1022] hover:bg-[#D9A6A8] hover:text-[#260812] text-[#FFF5EA] rounded-full transition-colors"
+              >
+                <Instagram size={18} className="text-[#C98F8F]" />
+                <span className="text-xs font-semibold">@anchorshubhamatre</span>
+              </a>
             </div>
           </div>
 
           <div className="bg-[#4A1022] p-8 rounded-2xl border border-[#E8D5C4]/30 shadow-xl">
-            <h3 className="text-xl font-bold text-[#FFF5EA] mb-6">Send Event Enquiry</h3>
+            <h3 className="text-xl font-bold text-[#FFF5EA] mb-6">Send Booking Request</h3>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <label className="block text-xs font-semibold uppercase text-[#E8D5C4] mb-1">Your Name</label>
@@ -112,8 +125,9 @@ const Contact = () => {
                   >
                     <option value="" disabled>Select Event</option>
                     <option value="Wedding / Sangeet">Wedding / Sangeet</option>
+                    <option value="Pre-Wedding (Roka / Haldi)">Pre-Wedding (Roka / Haldi)</option>
                     <option value="Corporate Event">Corporate Event</option>
-                    <option value="Concert / Live Show">Concert / Live Show</option>
+                    <option value="Cocktail / Private Party">Cocktail / Private Party</option>
                   </select>
                 </div>
               </div>
@@ -129,10 +143,10 @@ const Contact = () => {
               </div>
 
               <div>
-                <label className="block text-xs font-semibold uppercase text-[#E8D5C4] mb-1">Message</label>
+                <label className="block text-xs font-semibold uppercase text-[#E8D5C4] mb-1">Message / City</label>
                 <textarea 
                   rows="3" 
-                  placeholder="Tell us about venue, gathering, etc."
+                  placeholder="Mention venue city and gathering details..."
                   className="w-full bg-[#260812] border border-[#E8D5C4]/30 rounded-lg px-4 py-3 text-[#FFF5EA] focus:outline-none focus:border-[#C98F8F]"
                   onChange={(e) => setFormData({...formData, message: e.target.value})}
                 ></textarea>
