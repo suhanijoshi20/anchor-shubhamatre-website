@@ -37,26 +37,27 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           
-          {/* Logo / Name Section with Left Jump Mic Animation */}
+          {/* Logo / Name Section with Top-Down Jump Mic Animation */}
           <a href="#home" className="flex items-center gap-2 group">
             
-            {/* Left se Jump karke aane wala Mic Logo */}
+            {/* Upar se Jump karke aane wala Mic Logo */}
             <motion.div
-              initial={{ x: -50, opacity: 0, scale: 0.5 }}
-              animate={{ x: 0, opacity: 1, scale: [1, 1.25, 1] }}
+              initial={{ y: -60, opacity: 0, scale: 0.5 }}
+              animate={{ y: 0, opacity: 1, scale: [1, 1.25, 1] }}
               transition={{
-                x: { type: 'spring', stiffness: 120, damping: 10, delay: 0.3 },
+                y: { type: 'spring', stiffness: 140, damping: 10, delay: 0.2 },
                 scale: { duration: 0.6, repeat: Infinity, repeatDelay: 3, ease: 'easeInOut' },
                 opacity: { duration: 0.4 }
               }}
-              whileHover={{ rotate: -15, scale: 1.2 }}
+              whileHover={{ rotate: 15, scale: 1.2 }}
               className="p-1.5 rounded-full bg-[#4A1022] text-[#C98F8F] shadow-md border border-[#C98F8F]/40 flex items-center justify-center cursor-pointer"
             >
               <Mic size={18} className="text-[#C98F8F]" />
             </motion.div>
 
+            {/* Custom Stylish Font Name */}
             <span className={`text-xl sm:text-2xl font-extrabold tracking-wider ${isScrolled ? 'text-[#FFF5EA]' : 'text-[#4A1022]'}`}>
-              SHUBHAM ATRE
+              ᔕᕼᑌᗷᕼᗩᗰ ᗩTᖇE
             </span>
           </a>
 
