@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { MessageCircle, Phone, Sparkles } from 'lucide-react';
 import { motion, useInView } from 'framer-motion';
 
-// Number Count-Up Component
+// Animated Number Count-Up Component
 const Counter = ({ from = 0, to, duration = 2, suffix = "" }) => {
   const [count, setCount] = useState(from);
   const ref = React.useRef(null);
@@ -70,7 +70,7 @@ const Hero = () => {
           className="max-w-2xl mx-auto text-base sm:text-lg text-[#260812]/80 mb-10 leading-relaxed font-normal tracking-wide"
         >
           Corporate Shows • Celebrity Weddings • Concerts • High-Energy Sangeet Nights
-        </motion.p>
+        </p>
 
         {/* Action Buttons */}
         <motion.div 
@@ -102,15 +102,21 @@ const Hero = () => {
           </motion.a>
         </motion.div>
 
-        {/* Animated Stats Cards Section */}
-        <motion.div 
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-4xl mx-auto border-t border-[#E8D5C4] pt-10"
-        >
+        {/* Pop-up Animated Stats Cards Section */}
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-4xl mx-auto border-t border-[#E8D5C4] pt-10">
+          
+          {/* Card 1 - Pop-up */}
           <motion.div 
-            whileHover={{ y: -5 }}
+            initial={{ scale: 0, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ 
+              type: "spring", 
+              stiffness: 260, 
+              damping: 20, 
+              delay: 0.2 
+            }}
+            whileHover={{ scale: 1.05, y: -5 }}
             className="p-6 rounded-2xl bg-[#E8D5C4]/30 border-2 border-[#E8D5C4] shadow-md hover:border-[#C98F8F] transition-colors"
           >
             <div className="text-3xl sm:text-5xl font-extrabold text-[#4A1022]">
@@ -121,8 +127,18 @@ const Hero = () => {
             </div>
           </motion.div>
 
+          {/* Card 2 - Pop-up */}
           <motion.div 
-            whileHover={{ y: -5 }}
+            initial={{ scale: 0, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ 
+              type: "spring", 
+              stiffness: 260, 
+              damping: 20, 
+              delay: 0.4 
+            }}
+            whileHover={{ scale: 1.05, y: -5 }}
             className="p-6 rounded-2xl bg-[#E8D5C4]/30 border-2 border-[#E8D5C4] shadow-md hover:border-[#C98F8F] transition-colors"
           >
             <div className="text-3xl sm:text-5xl font-extrabold text-[#4A1022]">
@@ -133,8 +149,18 @@ const Hero = () => {
             </div>
           </motion.div>
 
+          {/* Card 3 - Pop-up */}
           <motion.div 
-            whileHover={{ y: -5 }}
+            initial={{ scale: 0, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ 
+              type: "spring", 
+              stiffness: 260, 
+              damping: 20, 
+              delay: 0.6 
+            }}
+            whileHover={{ scale: 1.05, y: -5 }}
             className="col-span-2 md:col-span-1 p-6 rounded-2xl bg-[#E8D5C4]/30 border-2 border-[#E8D5C4] shadow-md hover:border-[#C98F8F] transition-colors"
           >
             <div className="text-3xl sm:text-5xl font-extrabold text-[#4A1022]">
@@ -144,7 +170,8 @@ const Hero = () => {
               Client Satisfaction
             </div>
           </motion.div>
-        </motion.div>
+
+        </div>
 
       </div>
     </section>
