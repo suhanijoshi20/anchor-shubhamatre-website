@@ -1,183 +1,195 @@
 import React, { useState } from 'react';
-import { Phone, MapPin, Send, Instagram, ShieldCheck, Clock } from 'lucide-react';
+import { Phone, MapPin, Send, ShieldCheck, Clock } from 'lucide-react';
+
+// Custom SVG Instagram Icon Component (Main component ke bahar)
+const InstagramIcon = ({ size = 20, className = "" }) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+  >
+    <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+  </svg>
+);
 
 const Contact = () => {
-  const [formData, setFormData] = useState({ name: '', phone: '', eventType: '', eventDate: '', message: '' });
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    eventDate: '',
+    eventType: '',
+    message: ''
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const text = `Hi Anchor Shubham,%0A%0A*Name:* ${formData.name}%0A*Phone:* ${formData.phone}%0A*Event Type:* ${formData.eventType}%0A*Event Date:* ${formData.eventDate}%0A*Details:* ${formData.message}`;
+    const text = `*New Event Inquiry*%0A%0A*Name:* ${formData.name}%0A*Phone:* ${formData.phone}%0A*Date:* ${formData.eventDate}%0A*Event:* ${formData.eventType}%0A*Message:* ${formData.message}`;
     window.open(`https://wa.me/916232091754?text=${text}`, '_blank');
   };
 
   return (
-    <section id="contact" className="py-24 bg-[#260812] text-[#FFF5EA]">
+    <section id="contact" className="py-20 bg-[#FFF5EA] text-[#260812]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
+        {/* Section Heading */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-[#FFF5EA]">
-            Book <span className="text-[#C98F8F]">Your Dates</span>
+          <h2 className="text-3xl sm:text-5xl font-extrabold text-[#4A1022] mb-4">
+            Book Your Event
           </h2>
-          <p className="text-[#E8D5C4] mt-3 text-lg">Indore Based • Available Domestic & Pan-India</p>
-          <div className="w-20 h-1 bg-[#C98F8F] mx-auto mt-4 rounded-full"></div>
+          <p className="text-base sm:text-lg text-[#260812]/80 max-w-2xl mx-auto">
+            Let's turn your special occasion into an unforgettable celebration. Reach out today!
+          </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           
-          <div className="space-y-8">
-            <h3 className="text-2xl font-bold text-[#C98F8F]">Contact & Social</h3>
+          {/* Contact Details */}
+          <div className="space-y-8 bg-[#E8D5C4]/30 p-8 rounded-3xl border-2 border-[#E8D5C4]">
+            <h3 className="text-2xl font-bold text-[#4A1022]">Get In Touch</h3>
             
             <div className="space-y-6">
-              {/* Phone / WhatsApp */}
-              <div className="flex items-start gap-4">
-                <div className="p-3 bg-[#4A1022] rounded-full text-[#C98F8F]">
-                  <Phone size={22} />
+              <div className="flex items-center gap-4">
+                <div className="p-3 bg-[#4A1022] text-[#FFF5EA] rounded-full">
+                  <Phone size={24} />
                 </div>
                 <div>
-                  <div className="text-xs text-[#E8D5C4] uppercase font-semibold">Call / WhatsApp</div>
-                  <a href="https://wa.me/916232091754" target="_blank" rel="noreferrer" className="text-lg sm:text-xl font-bold text-[#FFF5EA] hover:text-[#D9A6A8] transition-colors">
-                    +91 6232091754
+                  <div className="text-xs text-[#260812]/60 uppercase font-semibold">Call / WhatsApp</div>
+                  <a href="tel:+916232091754" className="text-lg font-bold text-[#4A1022] hover:text-[#C98F8F]">
+                    +91 62320 91754
                   </a>
                 </div>
               </div>
 
-              {/* Instagram Handle */}
-              <div className="flex items-start gap-4">
-                <div className="p-3 bg-[#4A1022] rounded-full text-[#C98F8F]">
-                  <Instagram size={22} />
+              <div className="flex items-center gap-4">
+                <div className="p-3 bg-[#4A1022] text-[#FFF5EA] rounded-full">
+                  <InstagramIcon size={24} />
                 </div>
                 <div>
-                  <div className="text-xs text-[#E8D5C4] uppercase font-semibold">Instagram</div>
-                  <a 
-                    href="https://www.instagram.com/Anchor_shubhamatre" 
-                    target="_blank" 
-                    rel="noreferrer"
-                    className="text-lg sm:text-xl font-bold text-[#FFF5EA] hover:text-[#D9A6A8] transition-colors block mt-0.5"
-                  >
-                    @Anchor_shubhamatre
+                  <div className="text-xs text-[#260812]/60 uppercase font-semibold">Instagram</div>
+                  <a href="https://instagram.com" target="_blank" rel="noreferrer" className="text-lg font-bold text-[#4A1022] hover:text-[#C98F8F]">
+                    @anchorshubhamatre
                   </a>
                 </div>
               </div>
 
-              {/* Location */}
-              <div className="flex items-start gap-4">
-                <div className="p-3 bg-[#4A1022] rounded-full text-[#C98F8F]">
-                  <MapPin size={22} />
+              <div className="flex items-center gap-4">
+                <div className="p-3 bg-[#4A1022] text-[#FFF5EA] rounded-full">
+                  <MapPin size={24} />
                 </div>
                 <div>
-                  <div className="text-xs text-[#E8D5C4] uppercase font-semibold">Office Address</div>
-                  <p className="text-sm font-medium text-[#FFF5EA] mt-1 leading-relaxed">
-                    Amba Molina, Gulmarg Parisar, Near Vidyasagar School,<br />
-                    Pipliyahana, Indore - 452016, Madhya Pradesh
-                  </p>
-                </div>
-              </div>
-
-              {/* Duration & Policy */}
-              <div className="flex items-start gap-4">
-                <div className="p-3 bg-[#4A1022] rounded-full text-[#C98F8F]">
-                  <Clock size={22} />
-                </div>
-                <div>
-                  <div className="text-xs text-[#E8D5C4] uppercase font-semibold">Performance & Booking</div>
-                  <p className="text-sm font-medium text-[#FFF5EA] mt-1">
-                    Standard 4 Hours Performance • 50% Advance Booking
-                  </p>
+                  <div className="text-xs text-[#260812]/60 uppercase font-semibold">Location</div>
+                  <div className="text-lg font-bold text-[#4A1022]">
+                    Indore, Madhya Pradesh (Available Pan India)
+                  </div>
                 </div>
               </div>
             </div>
 
-            <div className="pt-6 border-t border-[#E8D5C4]/20">
-              <a 
-                href="https://www.instagram.com/Anchor_shubhamatre" 
-                target="_blank" 
-                rel="noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-[#4A1022] hover:bg-[#D9A6A8] hover:text-[#260812] text-[#FFF5EA] rounded-full transition-all font-semibold text-sm shadow-md"
-              >
-                <Instagram size={18} className="text-[#C98F8F]" />
-                <span>Follow @Anchor_shubhamatre</span>
-              </a>
+            <div className="pt-6 border-t border-[#E8D5C4] space-y-3">
+              <div className="flex items-center gap-2 text-sm text-[#260812]/80">
+                <ShieldCheck size={18} className="text-[#C98F8F]" />
+                <span>Guaranteed High Energy & Professional Execution</span>
+              </div>
+              <div className="flex items-center gap-2 text-sm text-[#260812]/80">
+                <Clock size={18} className="text-[#C98F8F]" />
+                <span>Quick Response Within 2 Hours</span>
+              </div>
             </div>
           </div>
 
-          <div className="bg-[#4A1022] p-8 rounded-2xl border border-[#E8D5C4]/30 shadow-xl">
-            <h3 className="text-xl font-bold text-[#FFF5EA] mb-6">Send Booking Request</h3>
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div>
-                <label className="block text-xs font-semibold uppercase text-[#E8D5C4] mb-1">Your Name</label>
-                <input 
-                  type="text" 
-                  required
-                  placeholder="Rahul Sharma"
-                  className="w-full bg-[#260812] border border-[#E8D5C4]/30 rounded-lg px-4 py-3 text-[#FFF5EA] focus:outline-none focus:border-[#C98F8F]"
-                  onChange={(e) => setFormData({...formData, name: e.target.value})}
-                />
-              </div>
+          {/* Form */}
+          <form onSubmit={handleSubmit} className="space-y-4 bg-white p-8 rounded-3xl shadow-lg border border-[#E8D5C4]">
+            <div>
+              <label className="block text-sm font-semibold text-[#4A1022] mb-1">Your Name</label>
+              <input
+                type="text"
+                name="name"
+                required
+                value={formData.name}
+                onChange={handleChange}
+                placeholder="John Doe"
+                className="w-full px-4 py-3 rounded-xl border border-[#E8D5C4] focus:outline-none focus:border-[#4A1022]"
+              />
+            </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-xs font-semibold uppercase text-[#E8D5C4] mb-1">Phone Number</label>
-                  <input 
-                    type="tel" 
-                    required
-                    placeholder="+91 9876543210"
-                    className="w-full bg-[#260812] border border-[#E8D5C4]/30 rounded-lg px-4 py-3 text-[#FFF5EA] focus:outline-none focus:border-[#C98F8F]"
-                    onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                  />
-                </div>
-                <div>
-                  <label className="block text-xs font-semibold uppercase text-[#E8D5C4] mb-1">Event Type</label>
-                  <select 
-                    required
-                    defaultValue=""
-                    className="w-full bg-[#260812] border border-[#E8D5C4]/30 rounded-lg px-4 py-3 text-[#FFF5EA] focus:outline-none focus:border-[#C98F8F]"
-                    onChange={(e) => setFormData({...formData, eventType: e.target.value})}
-                  >
-                    <option value="" disabled>Select Event</option>
-                    <option value="Wedding / Sangeet">Wedding / Sangeet</option>
-                    <option value="Pre-Wedding (Roka / Haldi)">Pre-Wedding (Roka / Haldi)</option>
-                    <option value="Corporate Event">Corporate Event</option>
-                    <option value="Cocktail / Private Party">Cocktail / Private Party</option>
-                  </select>
-                </div>
-              </div>
-
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-xs font-semibold uppercase text-[#E8D5C4] mb-1">Event Date</label>
-                <input 
-                  type="date" 
+                <label className="block text-sm font-semibold text-[#4A1022] mb-1">Phone Number</label>
+                <input
+                  type="tel"
+                  name="phone"
                   required
-                  className="w-full bg-[#260812] border border-[#E8D5C4]/30 rounded-lg px-4 py-3 text-[#FFF5EA] focus:outline-none focus:border-[#C98F8F]"
-                  onChange={(e) => setFormData({...formData, eventDate: e.target.value})}
+                  value={formData.phone}
+                  onChange={handleChange}
+                  placeholder="+91 98765 43210"
+                  className="w-full px-4 py-3 rounded-xl border border-[#E8D5C4] focus:outline-none focus:border-[#4A1022]"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-semibold uppercase text-[#E8D5C4] mb-1">Message / City</label>
-                <textarea 
-                  rows="3" 
-                  placeholder="Mention venue city and gathering details..."
-                  className="w-full bg-[#260812] border border-[#E8D5C4]/30 rounded-lg px-4 py-3 text-[#FFF5EA] focus:outline-none focus:border-[#C98F8F]"
-                  onChange={(e) => setFormData({...formData, message: e.target.value})}
-                ></textarea>
+                <label className="block text-sm font-semibold text-[#4A1022] mb-1">Event Date</label>
+                <input
+                  type="date"
+                  name="eventDate"
+                  required
+                  value={formData.eventDate}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 rounded-xl border border-[#E8D5C4] focus:outline-none focus:border-[#4A1022]"
+                />
               </div>
+            </div>
 
-              <button 
-                type="submit" 
-                className="w-full bg-[#C98F8F] hover:bg-[#D9A6A8] text-[#260812] font-bold py-4 rounded-xl transition-all duration-200 flex items-center justify-center gap-2 shadow-lg"
+            <div>
+              <label className="block text-sm font-semibold text-[#4A1022] mb-1">Event Type</label>
+              <select
+                name="eventType"
+                required
+                value={formData.eventType}
+                onChange={handleChange}
+                className="w-full px-4 py-3 rounded-xl border border-[#E8D5C4] focus:outline-none focus:border-[#4A1022]"
               >
-                <Send size={18} />
-                <span>Send Enquiry Via WhatsApp</span>
-              </button>
-            </form>
-          </div>
+                <option value="">Select Event Type</option>
+                <option value="Wedding / Sangeet">Wedding / Sangeet</option>
+                <option value="Corporate Event">Corporate Event</option>
+                <option value="Concert / Festival">Concert / Festival</option>
+                <option value="Private Party">Private Party</option>
+              </select>
+            </div>
+
+            <div>
+              <label className="block text-sm font-semibold text-[#4A1022] mb-1">Message / Requirements</label>
+              <textarea
+                name="message"
+                rows="4"
+                value={formData.message}
+                onChange={handleChange}
+                placeholder="Tell us more about your event..."
+                className="w-full px-4 py-3 rounded-xl border border-[#E8D5C4] focus:outline-none focus:border-[#4A1022]"
+              ></textarea>
+            </div>
+
+            <button
+              type="submit"
+              className="w-full bg-[#4A1022] text-[#FFF5EA] font-bold py-4 rounded-xl flex items-center justify-center gap-2 hover:bg-[#340a17] transition-colors shadow-md"
+            >
+              <Send size={18} />
+              <span>Send Inquiry On WhatsApp</span>
+            </button>
+          </form>
 
         </div>
-
-        <div className="mt-20 pt-8 border-t border-[#E8D5C4]/20 text-center text-sm text-[#E8D5C4]/70">
-          <p>© {new Date().getFullYear()} Anchor Shubham Atre. All Rights Reserved.</p>
-        </div>
-
       </div>
     </section>
   );
