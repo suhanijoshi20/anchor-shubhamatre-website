@@ -37,28 +37,40 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           
-          {/* Logo / Name Section with Top-Down Jump Mic Animation */}
+          {/* Logo / Name Section */}
           <a href="#home" className="flex items-center gap-2 group">
             
-            {/* Upar se Jump karke aane wala Mic Logo */}
+            {/* 2ND STEP: Left Side se Jump / Slide karke aane wala Mic Logo (Text ke baad aayega delay: 0.5s) */}
             <motion.div
-              initial={{ y: -60, opacity: 0, scale: 0.5 }}
-              animate={{ y: 0, opacity: 1, scale: [1, 1.25, 1] }}
+              initial={{ x: -60, opacity: 0, scale: 0.5 }}
+              animate={{ x: 0, opacity: 1, scale: [1, 1.25, 1] }}
               transition={{
-                y: { type: 'spring', stiffness: 140, damping: 10, delay: 0.2 },
-                scale: { duration: 0.6, repeat: Infinity, repeatDelay: 3, ease: 'easeInOut' },
-                opacity: { duration: 0.4 }
+                x: { type: 'spring', stiffness: 140, damping: 10, delay: 0.5 },
+                scale: { duration: 0.6, repeat: Infinity, repeatDelay: 3.5, ease: 'easeInOut' },
+                opacity: { duration: 0.3 }
               }}
-              whileHover={{ rotate: 15, scale: 1.2 }}
+              whileHover={{ rotate: -15, scale: 1.2 }}
               className="p-1.5 rounded-full bg-[#4A1022] text-[#C98F8F] shadow-md border border-[#C98F8F]/40 flex items-center justify-center cursor-pointer"
             >
               <Mic size={18} className="text-[#C98F8F]" />
             </motion.div>
 
-            {/* Custom Stylish Font Name */}
-            <span className={`text-xl sm:text-2xl font-extrabold tracking-wider ${isScrolled ? 'text-[#FFF5EA]' : 'text-[#4A1022]'}`}>
+            {/* 1ST STEP: Upar se Jump / Bounce karke sabse pehle aane wala Name Text (delay: 0.1s) */}
+            <motion.span
+              initial={{ y: -60, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{
+                type: 'spring',
+                stiffness: 150,
+                damping: 11,
+                delay: 0.1
+              }}
+              className={`text-xl sm:text-2xl font-extrabold tracking-wider ${
+                isScrolled ? 'text-[#FFF5EA]' : 'text-[#4A1022]'
+              }`}
+            >
               ᔕᕼᑌᗷᕼᗩᗰ ᗩTᖇE
-            </span>
+            </motion.span>
           </a>
 
           {/* Desktop Navigation Links */}
