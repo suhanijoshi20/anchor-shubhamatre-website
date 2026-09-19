@@ -86,7 +86,7 @@ const Navbar = () => {
                 opacity: { duration: 0.3 }
               }}
               whileHover={{ rotate: 0, scale: 1.25 }}
-              className="p-2 rounded-xl bg-gradient-to-br from-[#4A1022] to-[#260812] shadow-lg border border-[#C98F8F]/50 flex items-center justify-center cursor-pointer"
+              className="p-2 rounded-xl bg-[#4A1022] shadow-lg border border-[#C98F8F]/50 flex items-center justify-center cursor-pointer"
             >
               <RealisticMicIcon />
             </motion.div>
