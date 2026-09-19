@@ -1,5 +1,6 @@
 import React from 'react';
 import { Music, Crown, Briefcase, PartyPopper } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const Services = () => {
   const services = [
@@ -41,13 +42,21 @@ const Services = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((srv, idx) => (
-            <div key={idx} className="bg-[#E8D5C4]/30 border-2 border-[#E8D5C4] rounded-2xl p-8 hover:border-[#D9A6A8] hover:-translate-y-2 transition-all duration-300 shadow-md">
+            <motion.div 
+              key={idx}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: idx * 0.15 }}
+              whileHover={{ y: -8 }}
+              className="bg-[#E8D5C4]/30 border-2 border-[#E8D5C4] rounded-2xl p-8 shadow-md"
+            >
               <div className="p-4 bg-[#FFF5EA] rounded-xl w-fit border border-[#E8D5C4] mb-6">
                 {srv.icon}
               </div>
               <h3 className="text-xl font-bold text-[#4A1022] mb-3">{srv.title}</h3>
               <p className="text-[#260812]/80 text-sm leading-relaxed">{srv.desc}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
 
