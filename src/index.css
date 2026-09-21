@@ -1,15 +1,15 @@
 @import "tailwindcss";
 
-@layer base {
+/* @layer base {
   body {
     font-family: 'Plus Jakarta Sans', sans-serif;
   }
 
   /* इवेंट जैसी एलिगेंट फील देने के लिए हेडिंग्स पर Serif फॉन्ट */
-  h1, h2, h3, .font-serif-event {
+  /* h1, h2, h3, .font-serif-event {
     font-family: 'Playfair Display', serif;
   }
-}
+} */ 
 
 /* @import "tailwindcss"; */
 

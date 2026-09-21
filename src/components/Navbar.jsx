@@ -58,11 +58,11 @@ const Navbar = () => {
 
   // Custom font navigation items
   const navLinks = [
-    { name: 'ᔕTᗩᖇT ᕼEᖇE', href: '#home' },
-    { name: 'ᗩᗷOᑌT', href: '#about' },
-    { name: 'ᗰY E᙭ᑭEᖇTIᔕE', href: '#expertise' },
-    { name: 'ᗴᗩᒪᒪEᖇY', href: '#gallery' },
-    { name: 'ᑕOᑎTᗩᑕT', href: '#contact' },
+    { name: 'Start here', href: '#home' },
+    { name: 'About', href: '#about' },
+    { name: 'My Expertise', href: '#expertise' },
+    { name: 'Gallery', href: '#gallery' },
+    { name: 'Contact', href: '#contact' },
   ];
 
   return (
@@ -134,7 +134,7 @@ const Navbar = () => {
               rel="noreferrer"
               className="bg-[#C98F8F] hover:bg-[#D9A6A8] text-[#260812] px-5 py-2.5 rounded-full font-bold text-xs tracking-wider transition-all shadow-md"
             >
-              ᖇEᔕEᖇᐯE YOᑌᖇ ᕴOᒪᗪEᑎ ᗪᗩTEᔕ
+              Reserve your golden dates
             </a>
           </div>
 
@@ -176,7 +176,7 @@ const Navbar = () => {
             onClick={() => setIsMobileMenuOpen(false)}
             className="block text-center bg-[#C98F8F] text-[#260812] py-3 rounded-full font-bold text-sm tracking-wider mt-4"
           >
-            ᖇEᔕEᖇᐯE YOᑌᖇ ᕴOᒪᗪEᑎ ᗪᗩTEᔕ
+            Reserve your golden dates
           </a>
         </motion.div>
       )}
