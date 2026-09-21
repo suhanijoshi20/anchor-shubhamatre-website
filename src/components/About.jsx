@@ -25,7 +25,7 @@ const About = () => {
               className="absolute top-0 w-3/5 h-1/2 rounded-2xl overflow-hidden shadow-2xl border-2 border-[#C98F8F]/40 z-20 group"
             >
               <img
-                src="/image/image2.jpeg"
+                src="/images/image2.jpeg"
                 alt="Anchor Shubham Atre Hosting"
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
               />
@@ -45,7 +45,7 @@ const About = () => {
               className="absolute bottom-2 left-0 w-7/12 h-1/2 rounded-2xl overflow-hidden shadow-2xl border-2 border-[#C98F8F]/40 z-30 group"
             >
               <img
-                src="/image/image3.jpeg"
+                src="/images/image3.jpeg"
                 alt="Anchor Shubham Atre Event"
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
               />
@@ -65,7 +65,7 @@ const About = () => {
               className="absolute bottom-2 right-0 w-7/12 h-1/2 rounded-2xl overflow-hidden shadow-2xl border-2 border-[#C98F8F]/40 z-10 group"
             >
               <img
-                src="/image/image4.jpeg"
+                src="/images/image4.jpeg"
                 alt="Anchor Shubham Atre Stage Presence"
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
               />
