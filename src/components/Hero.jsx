@@ -177,14 +177,14 @@ const Hero = () => {
         transition={{ duration: 2.5, delay: 0.5, ease: 'easeInOut' }}
         className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat z-0"
         style={{
-          backgroundImage: images/Image1.jpeg, // <-- Yahan apni image ka naam dalein
+          backgroundImage: `url('/images/Image1.jpeg')`, // <-- Apne folder aur image ka path yahan diya hai
         }}
       />
 
-      {/* 2. Semi-Transparent Overlay taaki text clear dikhe */}
+      {/* 2. Dark Overlay */}
       <div className="absolute inset-0 bg-black/40 z-10" />
 
-      {/* 3. Hero Section ka Main Text */}
+      {/* 3. Hero Text */}
       <div className="relative z-20 text-center px-4 max-w-4xl mx-auto">
         <motion.h1
           initial={{ y: 30, opacity: 0 }}
