@@ -206,18 +206,18 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           
-          {/* Logo (Excepted: Keeps Normal Sans/Unicode Style) */}
-          <a href="#home" className="text-xl sm:text-2xl font-extrabold tracking-widest text-[#C98F8F]">
+          {/* Logo (Class 'logo-text' keeps it clean sans-serif) */}
+          <a href="#home" className="logo-text text-xl sm:text-2xl font-extrabold tracking-widest text-[#C98F8F]">
             SHUBHAM ATRE
           </a>
 
-          {/* Desktop Links (Royal Font Applied) */}
-          <div className="hidden md:flex space-x-8 items-center font-royal">
+          {/* Nav Links (Will strictly use the requested Playfair Serif font) */}
+          <div className="hidden md:flex space-x-8 items-center">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="text-base font-semibold tracking-wide hover:text-[#C98F8F] transition-colors"
+                className="text-base font-bold tracking-wide hover:text-[#C98F8F] transition-colors"
               >
                 {link.name}
               </a>
@@ -232,7 +232,7 @@ const Navbar = () => {
             </a>
           </div>
 
-          {/* Mobile Button */}
+          {/* Mobile Hamburger Button */}
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -246,13 +246,13 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-[#260812] border-b border-[#C98F8F]/20 px-4 pt-2 pb-6 space-y-4 font-royal">
+        <div className="md:hidden bg-[#260812] border-b border-[#C98F8F]/20 px-4 pt-2 pb-6 space-y-4">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
               onClick={() => setIsOpen(false)}
-              className="block text-lg font-semibold tracking-wide hover:text-[#C98F8F]"
+              className="block text-lg font-bold tracking-wide hover:text-[#C98F8F]"
             >
               {link.name}
             </a>

@@ -24,3 +24,17 @@
     --bg-nude-beige: #E8D5C4;
   }
 }
+
+
+/* Direct font application over all elements except logo */
+body, 
+section, 
+h1, h2, h3, h4, h5, h6, 
+p, span, div, button {
+  font-family: 'Playfair Display', Georgia, serif !important;
+}
+
+/* Exception: Keeping Logo in sleek clean style */
+.logo-text {
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+}
