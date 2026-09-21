@@ -1,58 +1,135 @@
 import React from 'react';
-import { Award, Users, Mic, Star } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const About = () => {
   return (
-    <section id="about" className="py-24 bg-[#E8D5C4]/30 text-[#260812]">
+    <section id="about" className="py-24 bg-[#260812] text-[#FFF5EA] overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="text-center mb-16">
-          <span className="text-[#4A1022] font-bold tracking-widest uppercase text-xs sm:text-sm bg-[#E8D5C4] px-4 py-1.5 rounded-full inline-block mb-3 border border-[#E8D5C4]">
-            Get To Know Me
-          </span>
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-[#4A1022]">
-            About <span className="text-[#C98F8F]">Anchor Shubham</span>
-          </h2>
-          <div className="w-20 h-1 bg-[#C98F8F] mx-auto mt-4 rounded-full"></div>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           
-          <div className="bg-[#FFF5EA] border-2 border-[#E8D5C4] p-8 rounded-2xl shadow-md">
-            <p className="text-[#260812] text-lg leading-relaxed mb-6 font-medium">
-              Welcome to the world of captivating stage presence! With over 5+ years of emceeing experience, I bring unparalleled energy, charisma, and elegance to every event.
-            </p>
-            <p className="text-[#260812]/80 leading-relaxed mb-8">
-              From high-octane corporate galas and luxury celebrity sangeets to large-scale musical concerts, my goal is to keep audiences hooked, engaged, and entertained throughout.
-            </p>
+          {/* ================= LEFT SIDE: 3 IMAGES COLLAGE ================= */}
+          <div className="relative w-full aspect-square max-w-md mx-auto lg:max-w-none flex items-center justify-center order-2 lg:order-1 my-6 lg:my-0">
+            
+            {/* Image 1 (Top Center) - Pehle Jump Karegi */}
+            <motion.div
+              initial={{ x: -120, y: -50, opacity: 0, scale: 0.7 }}
+              whileInView={{ x: 0, y: 0, opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{
+                type: 'spring',
+                stiffness: 120,
+                damping: 12,
+                delay: 0.6 // Sequence 2: Text ke baad 1st Image
+              }}
+              className="absolute top-0 w-3/5 h-1/2 rounded-2xl overflow-hidden shadow-2xl border-2 border-[#C98F8F]/40 z-20 group"
+            >
+              <img
+                src="/image/image2.jpeg"
+                alt="Anchor Shubham Atre Hosting"
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+            </motion.div>
 
-            <div className="grid grid-cols-2 gap-4 pt-4 border-t border-[#E8D5C4]">
-              <div className="flex items-center gap-3">
-                <Star className="text-[#C98F8F]" size={20} />
-                <span className="text-sm font-bold text-[#4A1022]">Versatile Anchor</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <Mic className="text-[#C98F8F]" size={20} />
-                <span className="text-sm font-bold text-[#4A1022]">High Energy Host</span>
-              </div>
-            </div>
+            {/* Image 2 (Bottom Left Overlapping) - Dusre No. Par Jump Karegi */}
+            <motion.div
+              initial={{ x: -150, y: 50, opacity: 0, scale: 0.7 }}
+              whileInView={{ x: 0, y: 0, opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{
+                type: 'spring',
+                stiffness: 120,
+                damping: 12,
+                delay: 0.8 // Sequence 3: 2nd Image
+              }}
+              className="absolute bottom-2 left-0 w-7/12 h-1/2 rounded-2xl overflow-hidden shadow-2xl border-2 border-[#C98F8F]/40 z-30 group"
+            >
+              <img
+                src="/image/image3.jpeg"
+                alt="Anchor Shubham Atre Event"
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+            </motion.div>
+
+            {/* Image 3 (Bottom Right Overlapping) - Teesre No. Par Jump Karegi */}
+            <motion.div
+              initial={{ x: -100, y: 80, opacity: 0, scale: 0.7 }}
+              whileInView={{ x: 0, y: 0, opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{
+                type: 'spring',
+                stiffness: 120,
+                damping: 12,
+                delay: 1.0 // Sequence 4: 3rd Image
+              }}
+              className="absolute bottom-2 right-0 w-7/12 h-1/2 rounded-2xl overflow-hidden shadow-2xl border-2 border-[#C98F8F]/40 z-10 group"
+            >
+              <img
+                src="/image/image4.jpeg"
+                alt="Anchor Shubham Atre Stage Presence"
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+            </motion.div>
+
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <div className="bg-[#FFF5EA] border border-[#E8D5C4] p-6 rounded-xl hover:border-[#D9A6A8] transition-all shadow-sm">
-              <Award className="text-[#C98F8F] mb-4" size={32} />
-              <h3 className="text-xl font-bold text-[#4A1022] mb-2">Corporate Galas</h3>
-              <p className="text-[#260812]/80 text-sm">Professional hosting for awards nights, product launches, and brand summits.</p>
+
+          {/* ================= RIGHT SIDE: TEXT CONTENT ================= */}
+          {/* Pehle Right Side Se Jump Karke Aayega */}
+          <motion.div
+            initial={{ x: 120, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{
+              type: 'spring',
+              stiffness: 100,
+              damping: 12,
+              delay: 0.2 // Sequence 1: Sabse Pehle Text
+            }}
+            className="order-1 lg:order-2 space-y-6 text-left"
+          >
+            <div className="inline-block px-4 py-1.5 rounded-full bg-[#4A1022] border border-[#C98F8F]/30 text-[#C98F8F] text-xs font-bold tracking-widest uppercase">
+              Meet The Host
             </div>
 
-            <div className="bg-[#FFF5EA] border border-[#E8D5C4] p-6 rounded-xl hover:border-[#D9A6A8] transition-all shadow-sm">
-              <Users className="text-[#C98F8F] mb-4" size={32} />
-              <h3 className="text-xl font-bold text-[#4A1022] mb-2">Wedding Sangeet</h3>
-              <p className="text-[#260812]/80 text-sm">Interactive game setups, family dance cues, and lively crowd entertainment.</p>
+            <h2 className="text-3xl sm:text-5xl font-extrabold text-[#FFF5EA] tracking-wider leading-tight">
+              ᗩᑎᑕᕼOᖇ ᔕᕼᑌᗷᕼᗩᗰ ᗩTᖇE
+            </h2>
+
+            <p className="text-[#E8D5C4] text-base sm:text-lg leading-relaxed">
+              Bringing boundless energy, high-class charisma, and seamless stage control to make every celebration truly extraordinary. With years of experience hosting luxury weddings, grand sangeet nights, corporate galas, and celebrity events.
+            </p>
+
+            <p className="text-[#D9A6A8] text-sm sm:text-base leading-relaxed">
+              Every moment is crafted to keep the audience captivated, smiling, and fully engaged from start to finish.
+            </p>
+
+            <div className="pt-4 flex flex-wrap items-center gap-6">
+              <div className="border-l-2 border-[#C98F8F] pl-4">
+                <h4 className="text-2xl font-bold text-[#FFF5EA]">500+</h4>
+                <p className="text-xs text-[#E8D5C4] uppercase tracking-wider">Shows Completed</p>
+              </div>
+
+              <div className="border-l-2 border-[#C98F8F] pl-4">
+                <h4 className="text-2xl font-bold text-[#FFF5EA]">100%</h4>
+                <p className="text-xs text-[#E8D5C4] uppercase tracking-wider">High Energy Guaranteed</p>
+              </div>
             </div>
-          </div>
+
+            <div className="pt-2">
+              <a
+                href="https://wa.me/916232091754"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-block bg-[#C98F8F] hover:bg-[#D9A6A8] text-[#260812] px-7 py-3 rounded-full font-bold text-xs uppercase tracking-wider transition-all shadow-lg hover:scale-105"
+              >
+                ᖇEᔕEᖇᐯE YOᑌᖇ ᕴOᒪᗪEᑎ ᗪᗩTEᔕ
+              </a>
+            </div>
+          </motion.div>
 
         </div>
+
       </div>
     </section>
   );
