@@ -60,7 +60,7 @@ const Navbar = () => {
   const navLinks = [
     { name: 'ᔕTᗩᖇT ᕼEᖇE', href: '#home' },
     { name: 'ᗩᗷOᑌT', href: '#about' },
-    { name: 'ᗰY E᙭ᑭEᖇTIᔕE', href: '#services' },
+    { name: 'ᗰY E᙭ᑭEᖇTIᔕE', href: '#expertise' },
     { name: 'ᗴᗩᒪᒪEᖇY', href: '#gallery' },
     { name: 'ᑕOᑎTᗩᑕT', href: '#contact' },
   ];
