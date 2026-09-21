@@ -41,7 +41,7 @@ const expertiseData = [
 
 const Expertise = () => {
   return (
-    <section id="expertise" className="py-24 bg-[#260812] text-[#FFF5EA] overflow-hidden">
+    <section id="expertise" className="py-24 bg-[#FFF5EA] text-[#FFF5EA] overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Main Header */}
