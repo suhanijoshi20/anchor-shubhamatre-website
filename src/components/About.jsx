@@ -138,54 +138,157 @@
 // export default About;
 
 
+// import React from 'react';
+// import { motion } from 'framer-motion';
+
+// const About = () => {
+//   return (
+//     <section id="about" className="py-24 bg-[#FDF8F2] text-[#260812] relative overflow-hidden">
+//       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+//         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          
+//           {/* Image Side with Royal Border */}
+//           <motion.div
+//             initial={{ opacity: 0, x: -50 }}
+//             whileInView={{ opacity: 1, x: 0 }}
+//             viewport={{ once: true }}
+//             transition={{ duration: 0.8 }}
+//             className="relative mx-auto w-full max-w-md lg:max-w-none"
+//           >
+//             <div className="relative p-3 bg-[#4A1022] rounded-3xl shadow-2xl border-2 border-[#C98F8F]">
+//               <div className="relative aspect-square w-full overflow-hidden rounded-2xl border border-[#C98F8F]/40 bg-[#260812]">
+//                 <img
+//                   src="/image/Image1.jpeg"
+//                   alt="Anchor Shubham"
+//                   className="w-full h-full object-cover"
+//                 />
+//               </div>
+//             </div>
+//           </motion.div>
+
+//           {/* Content Side */}
+//           <motion.div
+//             initial={{ opacity: 0, x: 50 }}
+//             whileInView={{ opacity: 1, x: 0 }}
+//             viewport={{ once: true }}
+//             transition={{ duration: 0.8 }}
+//             className="space-y-6"
+//           >
+//             <span className="text-xs font-bold uppercase tracking-widest text-[#4A1022] bg-[#F7E7D8] px-4 py-1.5 rounded-full border border-[#C98F8F]">
+//               About The Host
+//             </span>
+//             <h2 className="text-3xl sm:text-5xl font-extrabold tracking-wider text-[#260812]">
+//               Bringing Life & Elegance To Every Stage
+//             </h2>
+//             <p className="text-[#6B4423] text-base sm:text-lg leading-relaxed">
+//               With years of stage experience, I specialize in transforming high-profile weddings, corporate galas, and live concerts into unforgettable celebrations. My hosting style blends charm, energy, and royal elegance to keep your guests captivated throughout the event.
+//             </p>
+//           </motion.div>
+
+//         </div>
+//       </div>
+//     </section>
+//   );
+// };
+
+// export default About;
+
+
 import React from 'react';
 import { motion } from 'framer-motion';
 
 const About = () => {
   return (
-    <section id="about" className="py-24 bg-[#FDF8F2] text-[#260812] relative overflow-hidden">
+    <section id="about" className="py-24 bg-[#260812] text-[#FFF5EA] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        {/* Section Heading */}
+        <div className="text-center mb-16">
+          <motion.h2
+            initial={{ y: -40, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-3xl sm:text-5xl font-extrabold tracking-wider text-[#C98F8F]"
+          >
+            ᗩᗷOᑌT ᗰE
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3, duration: 0.6 }}
+            className="text-[#E8D5C4] mt-3 tracking-wide text-sm sm:text-base max-w-2xl mx-auto"
+          >
+            Passionate Anchor & Event Host Creating Unforgettable Moments Across India
+          </motion.p>
+        </div>
+
+        {/* Content Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           
-          {/* Image Side with Royal Border */}
+          {/* Image Container */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ x: -80, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            transition={{ type: 'spring', stiffness: 100, damping: 15, delay: 0.2 }}
             className="relative mx-auto w-full max-w-md lg:max-w-none"
           >
-            <div className="relative p-3 bg-[#4A1022] rounded-3xl shadow-2xl border-2 border-[#C98F8F]">
-              <div className="relative aspect-square w-full overflow-hidden rounded-2xl border border-[#C98F8F]/40 bg-[#260812]">
+            <div className="relative bg-[#3B0C1B] p-3 rounded-3xl border border-[#C98F8F]/30 shadow-2xl">
+              <div 
+                className="relative w-full overflow-hidden rounded-2xl border border-[#C98F8F]/40"
+                style={{ aspectRatio: '4/5' }}
+              >
                 <img
                   src="/image/Image1.jpeg"
-                  alt="Anchor Shubham"
-                  className="w-full h-full object-cover"
+                  alt="Anchor Shubham Atre"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                 />
               </div>
             </div>
           </motion.div>
 
-          {/* Content Side */}
+          {/* Text Description */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ x: 80, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            transition={{ type: 'spring', stiffness: 100, damping: 15, delay: 0.4 }}
             className="space-y-6"
           >
-            <span className="text-xs font-bold uppercase tracking-widest text-[#4A1022] bg-[#F7E7D8] px-4 py-1.5 rounded-full border border-[#C98F8F]">
-              About The Host
-            </span>
-            <h2 className="text-3xl sm:text-5xl font-extrabold tracking-wider text-[#260812]">
-              Bringing Life & Elegance To Every Stage
-            </h2>
-            <p className="text-[#6B4423] text-base sm:text-lg leading-relaxed">
-              With years of stage experience, I specialize in transforming high-profile weddings, corporate galas, and live concerts into unforgettable celebrations. My hosting style blends charm, energy, and royal elegance to keep your guests captivated throughout the event.
+            <h3 className="text-2xl sm:text-4xl font-bold text-[#FFF5EA] leading-tight">
+              Elevating Celebrations With High Voltage Energy & Grace
+            </h3>
+
+            <p className="text-[#E8D5C4] text-base sm:text-lg leading-relaxed">
+              Welcome! I am <span className="text-[#C98F8F] font-bold">Shubham Atre</span>, a professional event host and anchor with years of experience commanding stages across luxury weddings, corporate summits, and grand concerts.
             </p>
+
+            <p className="text-[#E8D5C4] text-base sm:text-lg leading-relaxed">
+              My goal is to bring spontaneous charm, interactive guest engagement, and a seamless flow to every single event, making it truly iconic and memorable.
+            </p>
+
+            <div className="pt-4 flex flex-wrap gap-4">
+              <a
+                href="#contact"
+                className="bg-[#C98F8F] hover:bg-[#D9A6A8] text-[#260812] px-8 py-3 rounded-full font-bold text-sm tracking-wider uppercase transition-all shadow-lg hover:scale-105"
+              >
+                Let's Connect
+              </a>
+              <a
+                href="https://wa.me/916232091754"
+                target="_blank"
+                rel="noreferrer"
+                className="border-2 border-[#C98F8F] text-[#FFF5EA] hover:bg-[#C98F8F]/20 px-8 py-3 rounded-full font-bold text-sm tracking-wider uppercase transition-all"
+              >
+                WhatsApp Direct
+              </a>
+            </div>
           </motion.div>
 
         </div>
+
       </div>
     </section>
   );

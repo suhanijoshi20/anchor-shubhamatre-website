@@ -154,57 +154,148 @@
 
 // export default Expertise;
 
+// import React from 'react';
+// import { motion } from 'framer-motion';
+
+// const servicesList = [
+//   {
+//     title: 'Luxury Weddings & Sangeet',
+//     desc: 'High-energy hosting, interactive games, and seamless stage coordination for royal weddings.',
+//   },
+//   {
+//     title: 'Corporate Galas & Awards',
+//     desc: 'Sophisticated presentation, crisp flow, and audience engagement for summits and award nights.',
+//   },
+//   {
+//     title: 'Concerts & Celebrity Shows',
+//     desc: 'Unmatched stage presence and crowd interaction for mega live music concerts and celebrity intros.',
+//   },
+// ];
+
+// const Services = () => {
+//   return (
+//     <section id="services" className="py-24 bg-[#F7E7D8] text-[#260812] relative overflow-hidden">
+//       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+//         <div className="text-center mb-16">
+//           <motion.div
+//             initial={{ y: -30, opacity: 0 }}
+//             whileInView={{ y: 0, opacity: 1 }}
+//             viewport={{ once: true }}
+//             transition={{ duration: 0.6 }}
+//           >
+//             <span className="text-xs font-bold uppercase tracking-widest text-[#4A1022] bg-[#FDF8F2] px-4 py-1.5 rounded-full border border-[#C98F8F]">
+//               My Offerings
+//             </span>
+//             <h2 className="text-3xl sm:text-5xl font-extrabold tracking-wider text-[#260812] mt-4">
+//               ᔕEᖇᐯIᑕEᔕ
+//             </h2>
+//           </motion.div>
+//         </div>
+
+//         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+//           {servicesList.map((service, index) => (
+//             <motion.div
+//               key={index}
+//               initial={{ y: 40, opacity: 0 }}
+//               whileInView={{ y: 0, opacity: 1 }}
+//               viewport={{ once: true }}
+//               transition={{ duration: 0.5, delay: index * 0.2 }}
+//               className="bg-[#FDF8F2] p-8 rounded-3xl border-2 border-[#C98F8F]/40 shadow-xl hover:shadow-2xl hover:border-[#4A1022] transition-all"
+//             >
+//               <h3 className="text-xl font-bold text-[#4A1022] mb-3">{service.title}</h3>
+//               <p className="text-[#6B4423] text-sm leading-relaxed">{service.desc}</p>
+//             </motion.div>
+//           ))}
+//         </div>
+
+//       </div>
+//     </section>
+//   );
+// };
+
+// export default Services;
+
+
+
+
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const servicesList = [
+const servicesData = [
   {
-    title: 'Luxury Weddings & Sangeet',
-    desc: 'High-energy hosting, interactive games, and seamless stage coordination for royal weddings.',
+    id: 1,
+    title: 'Wedding & Sangeet Anchor',
+    desc: 'Bringing royal grandeur, warm family moments, and electrifying stage timing to sangeet nights and reception celebrations.',
+    icon: '👑',
   },
   {
-    title: 'Corporate Galas & Awards',
-    desc: 'Sophisticated presentation, crisp flow, and audience engagement for summits and award nights.',
+    id: 2,
+    title: 'Corporate Event Host',
+    desc: 'Delivering sharp sophistication, crisp presentation, and engaging audience interactions for award galas and corporate launches.',
+    icon: '🎙️',
   },
   {
-    title: 'Concerts & Celebrity Shows',
-    desc: 'Unmatched stage presence and crowd interaction for mega live music concerts and celebrity intros.',
+    id: 3,
+    title: 'Concert & Celebrity Shows',
+    desc: 'Commanding massive arena crowds with unmatched high-energy hosting and seamless star intros for mega live shows.',
+    icon: '✨',
+  },
+  {
+    id: 4,
+    title: 'Pre-Wedding Ceremonies',
+    desc: 'Curating cheerful ice-breakers, funny traditional games, and intimate family bonding for Haldi, Mehendi, and Ring ceremonies.',
+    icon: '🎉',
   },
 ];
 
 const Services = () => {
   return (
-    <section id="services" className="py-24 bg-[#F7E7D8] text-[#260812] relative overflow-hidden">
+    <section id="services" className="py-24 bg-[#260812] text-[#FFF5EA] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
+        {/* Section Heading */}
         <div className="text-center mb-16">
-          <motion.div
-            initial={{ y: -30, opacity: 0 }}
+          <motion.h2
+            initial={{ y: -40, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
+            className="text-3xl sm:text-5xl font-extrabold tracking-wider text-[#C98F8F]"
           >
-            <span className="text-xs font-bold uppercase tracking-widest text-[#4A1022] bg-[#FDF8F2] px-4 py-1.5 rounded-full border border-[#C98F8F]">
-              My Offerings
-            </span>
-            <h2 className="text-3xl sm:text-5xl font-extrabold tracking-wider text-[#260812] mt-4">
-              ᔕEᖇᐯIᑕEᔕ
-            </h2>
-          </motion.div>
+            ᔕEᖇᐯIᑕEᔕ
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3, duration: 0.6 }}
+            className="text-[#E8D5C4] mt-3 tracking-wide text-sm sm:text-base max-w-xl mx-auto"
+          >
+            Tailored Stage Hosting Solutions Designed To Make Your Event Unforgettable
+          </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {servicesList.map((service, index) => (
+        {/* Services Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {servicesData.map((service, index) => (
             <motion.div
-              key={index}
-              initial={{ y: 40, opacity: 0 }}
+              key={service.id}
+              initial={{ y: 50, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
-              className="bg-[#FDF8F2] p-8 rounded-3xl border-2 border-[#C98F8F]/40 shadow-xl hover:shadow-2xl hover:border-[#4A1022] transition-all"
+              transition={{ duration: 0.5, delay: index * 0.15 }}
+              className="bg-[#3B0C1B]/60 border border-[#C98F8F]/20 rounded-3xl p-8 backdrop-blur-sm hover:border-[#C98F8F] hover:bg-[#3B0C1B] transition-all group"
             >
-              <h3 className="text-xl font-bold text-[#4A1022] mb-3">{service.title}</h3>
-              <p className="text-[#6B4423] text-sm leading-relaxed">{service.desc}</p>
+              <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
+                {service.icon}
+              </div>
+              <h3 className="text-xl font-bold text-[#FFF5EA] mb-3 group-hover:text-[#C98F8F] transition-colors">
+                {service.title}
+              </h3>
+              <p className="text-[#E8D5C4] text-sm leading-relaxed">
+                {service.desc}
+              </p>
             </motion.div>
           ))}
         </div>
