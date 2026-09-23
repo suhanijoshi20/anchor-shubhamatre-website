@@ -2,8 +2,8 @@
 
 body {
   font-family: 'Inter', sans-serif !important;
-  background-color: #0B0F19 !important;
-  color: #F3F4F6 !important;
+  background-color: #FDFBF7 !important;
+  color: #1E293B !important;
 }
 
 h1, h2, h3, h4, h5, h6, .font-funky, .font-serif {
@@ -16,7 +16,7 @@ h1, h2, h3, h4, h5, h6, .font-funky, .font-serif {
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #0B0F19;
+  background: #FDFBF7;
 }
 ::-webkit-scrollbar-thumb {
   background: #D4AF37;

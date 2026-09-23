@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Mic } from 'lucide-react';
-import { motion } from 'framer-motion';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -26,7 +25,7 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-[#0B0F19]/90 backdrop-blur-md border-b border-[#D4AF37]/20 py-4 shadow-xl'
+          ? 'bg-[#FDFBF7]/90 backdrop-blur-md border-b border-[#E2E8F0] py-4 shadow-sm'
           : 'bg-transparent py-6'
       }`}
     >
@@ -34,10 +33,10 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           
           <a href="#home" className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-[#D4AF37] to-[#FFBF00] flex items-center justify-center shadow-lg shadow-[#D4AF37]/20">
-              <Mic className="w-5 h-5 text-[#0B0F19]" />
+            <div className="w-10 h-10 rounded-full bg-[#D4AF37] flex items-center justify-center shadow-md">
+              <Mic className="w-5 h-5 text-white" />
             </div>
-            <span className="text-xl sm:text-2xl font-bold tracking-tight text-white">
+            <span className="text-xl sm:text-2xl font-bold tracking-tight text-[#1E293B]">
               SHUBHAM <span className="text-[#D4AF37]">ATRE</span>
             </span>
           </a>
@@ -47,7 +46,7 @@ const Navbar = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-xs font-semibold tracking-widest text-gray-300 hover:text-[#D4AF37] transition-colors"
+                className="text-xs font-bold tracking-widest text-[#475569] hover:text-[#D4AF37] transition-colors"
               >
                 {link.name}
               </a>
@@ -57,7 +56,7 @@ const Navbar = () => {
               href="https://wa.me/916232091754"
               target="_blank"
               rel="noreferrer"
-              className="bg-gradient-to-r from-[#D4AF37] to-[#B38F24] hover:from-[#FFBF00] hover:to-[#D4AF37] text-[#0B0F19] px-6 py-2.5 rounded-full font-bold text-xs tracking-wider uppercase transition-all shadow-lg shadow-[#D4AF37]/20 hover:scale-105"
+              className="bg-[#D4AF37] hover:bg-[#B38F24] text-white px-6 py-2.5 rounded-full font-bold text-xs tracking-wider uppercase transition-all shadow-md hover:scale-105"
             >
               Book Now
             </a>
@@ -76,13 +75,13 @@ const Navbar = () => {
       </div>
 
       {isMobileMenuOpen && (
-        <div className="lg:hidden bg-[#0B0F19] border-b border-[#D4AF37]/20 px-4 pt-4 pb-6 space-y-3">
+        <div className="lg:hidden bg-[#FDFBF7] border-b border-[#E2E8F0] px-4 pt-4 pb-6 space-y-3">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
               onClick={() => setIsMobileMenuOpen(false)}
-              className="block text-gray-200 hover:text-[#D4AF37] font-semibold text-sm py-2 tracking-wider"
+              className="block text-[#475569] hover:text-[#D4AF37] font-semibold text-sm py-2 tracking-wider"
             >
               {link.name}
             </a>
@@ -92,7 +91,7 @@ const Navbar = () => {
             target="_blank"
             rel="noreferrer"
             onClick={() => setIsMobileMenuOpen(false)}
-            className="block text-center bg-[#D4AF37] text-[#0B0F19] py-3 rounded-full font-bold text-sm uppercase tracking-wider mt-4"
+            className="block text-center bg-[#D4AF37] text-white py-3 rounded-full font-bold text-sm uppercase tracking-wider mt-4"
           >
             Book Now
           </a>
