@@ -192,7 +192,7 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-3xl sm:text-5xl md:text-6xl font-extrabold text-[#FFF5EA] tracking-wider mb-4 drop-shadow-lg"
         >
-          Anchor Shubham Atre
+          ᗩᑎᑕᕼOᖇ ᔕᕼᑌᗷᕼᗩᗰ ᗩTᖇE
         </motion.h1>
 
         <motion.p

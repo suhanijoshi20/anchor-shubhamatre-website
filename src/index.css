@@ -1,4 +1,4 @@
-@import "tailwindcss";
+/* @import "tailwindcss"; */
 
 /* @layer base {
   body {
@@ -14,7 +14,7 @@
 /* @import "tailwindcss"; */
 
 
-@layer base {
+/* @layer base {
   :root {
     --bg-deep-wine: #260812;
     --bg-burgundy: #4A1022;
@@ -27,7 +27,7 @@
 
 
 /* Direct font application over all elements except logo */
-body, 
+/* body, 
 section, 
 h1, h2, h3, h4, h5, h6, 
 p, span, div, button {
@@ -35,6 +35,43 @@ p, span, div, button {
 }
 
 /* Exception: Keeping Logo in sleek clean style */
-.logo-text {
+/* .logo-text {
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+} */  
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;900&family=Plus+Jakarta+Sans:wght@600;800&display=swap');
+
+/* Global Funky Theme Palette */
+:root {
+  --bg-funky-dark: #0f051d;
+  --bg-funky-card: #1c0b36;
+  --accent-pink: #ff007f;
+  --accent-cyan: #00f0ff;
+  --accent-yellow: #ffe600;
+  --accent-purple: #8a2be2;
+}
+
+body, section, h1, h2, h3, h4, h5, h6, p, span, div, button, a {
+  font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif !important;
+}
+
+/* Funky Glass & Pop Border Styling */
+.funky-border {
+  border: 3px solid var(--accent-pink);
+  box-shadow: 6px 6px 0px var(--accent-cyan);
+}
+
+.funky-border-yellow {
+  border: 3px solid var(--accent-yellow);
+  box-shadow: 6px 6px 0px var(--accent-pink);
+}
+
+.funky-text-gradient {
+  background: linear-gradient(135deg, #ff007f, #ffe600, #00f0ff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
 }
