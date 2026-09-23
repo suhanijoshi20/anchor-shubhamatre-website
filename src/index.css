@@ -1,40 +1,46 @@
 @import "tailwindcss";
 
-/* @layer base {
-  body {
-    font-family: 'Plus Jakarta Sans', sans-serif;
-  }
-
-  /* इवेंट जैसी एलिगेंट फील देने के लिए हेडिंग्स पर Serif फॉन्ट */
-  /* h1, h2, h3, .font-serif-event {
-    font-family: 'Playfair Display', serif;
-  }
-} */ 
-
-/* @import "tailwindcss"; */
-
-
 @layer base {
   :root {
-    --bg-deep-wine: #260812;
-    --bg-burgundy: #4A1022;
-    --accent-rose-gold: #C98F8F;
-    --accent-dusty-rose: #D9A6A8;
-    --bg-cream: #FFF5EA;
-    --bg-nude-beige: #E8D5C4;
+    --bg-dark: #0F0C20;
+    --bg-card: #1C1438;
+    --neon-lime: #CCFF00;
+    --neon-pink: #FF007F;
+    --neon-cyan: #00E5FF;
+    --neon-yellow: #FFB800;
+    --text-white: #FFFFFF;
+  }
+
+  body {
+    font-family: 'Outfit', sans-serif !important;
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+  }
+
+  /* Bold, Clean & Modern Funky Headings */
+  h1, h2, h3, h4, h5, h6, .font-funky {
+    font-family: 'Fredoka', cursive, sans-serif !important;
+    letter-spacing: 0.03em;
   }
 }
 
-
-/* Direct font application over all elements except logo */
-body, 
-section, 
-h1, h2, h3, h4, h5, h6, 
-p, span, div, button {
-  font-family: 'Playfair Display', Georgia, serif !important;
+/* Custom Neon Glow Utilities */
+.glow-lime {
+  box-shadow: 0 0 20px rgba(204, 255, 0, 0.35);
 }
 
-/* Exception: Keeping Logo in sleek clean style */
-.logo-text {
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+.glow-pink {
+  box-shadow: 0 0 20px rgba(255, 0, 127, 0.4);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0F0C20;
+}
+::-webkit-scrollbar-thumb {
+  background: #FF007F;
+  border-radius: 5px;
 }

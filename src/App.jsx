@@ -2,17 +2,17 @@ import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
-import Services from './components/Services';
+import Expertise from './components/Expertise';
 import Gallery from './components/Gallery';
 import Contact from './components/Contact';
 
 function App() {
   return (
-    <div className="bg-black text-white min-h-screen">
+    <div className="bg-[#0F0C20] text-white min-h-screen">
       <Navbar />
       <Hero />
       <About />
-      <Services />
+      <Expertise />
       <Gallery />
       <Contact />
     </div>

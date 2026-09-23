@@ -41,8 +41,13 @@ const expertiseData = [
 
 const Expertise = () => {
   return (
-    <section id="expertise" className="py-24 bg-[#260812] text-[#FFF5EA] overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="expertise" className="py-24 bg-[#0F0C20] text-[#FFFFFF] overflow-hidden relative">
+      
+      {/* Decorative Glow Elements */}
+      <div className="absolute top-10 left-[-50px] w-72 h-72 bg-[#FF007F]/20 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-10 right-[-50px] w-80 h-80 bg-[#00E5FF]/20 rounded-full blur-3xl pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Main Header */}
         <div className="text-center mb-16">
@@ -51,7 +56,7 @@ const Expertise = () => {
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-3xl sm:text-5xl font-extrabold tracking-wider text-[#C98F8F]"
+            className="text-4xl sm:text-6xl font-black font-funky tracking-wider text-[#CCFF00] drop-shadow-[0_4px_15px_rgba(204,255,0,0.3)]"
           >
             ᗰY E᙭ᑭEᖇTIᔕE
           </motion.h2>
@@ -60,7 +65,7 @@ const Expertise = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3, duration: 0.6 }}
-            className="text-[#E8D5C4] mt-3 tracking-wide text-sm sm:text-base"
+            className="text-[#00E5FF] mt-3 font-semibold tracking-wide text-base sm:text-lg"
           >
             Crafting Unforgettable Experiences Across Diverse Stages
           </motion.p>
@@ -71,7 +76,7 @@ const Expertise = () => {
           {expertiseData.map((item, index) => (
             <div
               key={item.id}
-              className="bg-[#3B0C1B]/50 border border-[#C98F8F]/20 rounded-3xl p-6 sm:p-8 backdrop-blur-sm"
+              className="bg-[#1C1438] border-2 border-[#FF007F]/40 rounded-3xl p-6 sm:p-8 backdrop-blur-sm shadow-[0_10px_30px_rgba(0,0,0,0.5)] hover:border-[#CCFF00] transition-colors duration-300"
             >
               {/* 1. TOP: Jump from Top for Topic */}
               <motion.div
@@ -84,12 +89,14 @@ const Expertise = () => {
                   damping: 14,
                   delay: 0.1,
                 }}
-                className="mb-6 border-b border-[#C98F8F]/20 pb-4 flex items-center justify-between flex-wrap gap-2"
+                className="mb-6 border-b-2 border-[#FF007F]/30 pb-4 flex items-center justify-between flex-wrap gap-2"
               >
-                <h3 className="text-2xl sm:text-3xl font-extrabold text-[#FFF5EA] tracking-wide">
+                <h3 className="text-2xl sm:text-4xl font-extrabold font-funky text-[#FFFFFF] tracking-wide">
                   {item.title}
                 </h3>
-                <span className="text-[#C98F8F] font-bold text-lg">0{index + 1}</span>
+                <span className="text-[#CCFF00] font-black font-funky text-2xl bg-[#FF007F]/20 px-4 py-1 rounded-full border border-[#FF007F]/50">
+                  0{index + 1}
+                </span>
               </motion.div>
 
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
@@ -104,12 +111,12 @@ const Expertise = () => {
                     opacity: { duration: 0.5, delay: 0.35 },
                     filter: { duration: 1.5, delay: 0.7, ease: 'easeInOut' },
                   }}
-                  className="w-full aspect-video rounded-2xl overflow-hidden shadow-2xl border border-[#C98F8F]/30 group"
+                  className="w-full aspect-video rounded-2xl overflow-hidden shadow-2xl border-2 border-[#00E5FF]/50 group"
                 >
                   <img
                     src={item.image}
                     alt={item.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                 </motion.div>
 
@@ -124,9 +131,9 @@ const Expertise = () => {
                     damping: 14,
                     delay: 0.6,
                   }}
-                  className="space-y-4"
+                  className="space-y-6"
                 >
-                  <p className="text-[#E8D5C4] text-base sm:text-lg leading-relaxed">
+                  <p className="text-[#E2D9FF] text-base sm:text-lg leading-relaxed font-medium">
                     {item.description}
                   </p>
 
@@ -135,7 +142,7 @@ const Expertise = () => {
                       href="https://wa.me/916232091754"
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-block bg-[#C98F8F] hover:bg-[#D9A6A8] text-[#260812] px-6 py-2.5 rounded-full font-bold text-xs uppercase tracking-wider transition-all shadow-md hover:scale-105"
+                      className="inline-block bg-[#CCFF00] hover:bg-[#FF007F] text-[#0F0C20] hover:text-[#FFFFFF] px-7 py-3 rounded-full font-black text-xs uppercase tracking-wider transition-all shadow-[0_0_15px_rgba(204,255,0,0.5)] hover:scale-105"
                     >
                       Book For This Event
                     </a>
