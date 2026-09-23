@@ -1,57 +1,55 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Award, Heart, Zap, UserCheck } from 'lucide-react';
+import { Zap, Heart, Award, UserCheck } from 'lucide-react';
 
 const About = () => {
   const highlights = [
     {
-      icon: <Zap className="w-8 h-8 text-[#CCFF00]" />,
-      title: 'High Voltage Energy',
-      desc: 'Keeps the audience dynamic and charged from start to finish.'
+      icon: <Zap className="w-7 h-7 text-[#D4AF37]" />,
+      title: 'High-Voltage Stage Energy',
+      desc: 'Keeps the crowd engaged, lively, and connected throughout the event.'
     },
     {
-      icon: <Heart className="w-8 h-8 text-[#FF007F]" />,
+      icon: <Heart className="w-7 h-7 text-[#D4AF37]" />,
       title: 'Personalized Touch',
-      desc: 'Tailors scripts and hosting style according to family & client preferences.'
+      desc: 'Adapts scripting and flow according to family and client preferences.'
     },
     {
-      icon: <Award className="w-8 h-8 text-[#00E5FF]" />,
-      title: 'Stage Excellence',
-      desc: 'Flawless crowd management with zero dull moments during live events.'
+      icon: <Award className="w-7 h-7 text-[#D4AF37]" />,
+      title: 'Professional Hosting',
+      desc: 'Flawless execution with premium decorum for grand celebrations.'
     },
     {
-      icon: <UserCheck className="w-8 h-8 text-[#FFB800]" />,
-      title: 'Versatile Hosting',
-      desc: 'Expertise in multi-genre events from royal weddings to corporate summits.'
+      icon: <UserCheck className="w-7 h-7 text-[#D4AF37]" />,
+      title: 'Multi-Genre Expertise',
+      desc: 'Seamless transition between traditional weddings and corporate summits.'
     }
   ];
 
   return (
-    <section id="about" className="py-24 bg-[#0F0C20] text-white relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section id="about" className="py-24 bg-[#0B0F19] text-white relative border-t border-gray-800">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="text-center mb-16">
           <motion.h2
-            initial={{ y: -30, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-4xl sm:text-6xl font-black font-funky text-[#CCFF00] drop-shadow-[0_4px_15px_rgba(204,255,0,0.3)]"
+            className="text-3xl sm:text-5xl font-bold tracking-tight text-white"
           >
-            ABOUT SHUBHAM
+            ABOUT <span className="text-[#D4AF37]">SHUBHAM</span>
           </motion.h2>
-          <p className="text-[#00E5FF] mt-3 font-semibold tracking-wide text-base sm:text-lg">
-            The Voice & Energy Behind Memorable Stage Stories
+          <p className="text-gray-400 mt-3 font-medium text-base sm:text-lg">
+            The Voice & Energy Behind Memorable Celebrations
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
+            initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="rounded-3xl overflow-hidden border-4 border-[#00E5FF] shadow-[0_0_25px_rgba(0,229,255,0.4)]"
+            className="rounded-2xl overflow-hidden border border-gray-800 shadow-xl"
           >
             <img
               src="/image/image2.jpeg"
@@ -61,17 +59,16 @@ const About = () => {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 40 }}
+            initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="space-y-6 text-[#E2D9FF] text-base sm:text-lg leading-relaxed font-medium"
+            className="space-y-6 text-gray-300 text-base sm:text-lg leading-relaxed"
           >
             <p>
-              Anchor Shubham Atre is a renowned professional stage host known for his electrifying presence, witty humor, and flawless audience connection. With years of experience across luxury weddings, corporate galas, live music shows, and cultural nights, he brings a seamless blend of charm and professionalism.
+              Anchor Shubham Atre is a professional stage host known for his charming stage presence, spontaneous wit, and effortless crowd connection. Over the years, he has hosted hundreds of luxury weddings, corporate summits, concerts, and social galas across India.
             </p>
             <p>
-              Whether it is orchestrating high-energy sangeet performances or leading formal award ceremonies with dignity, Shubham creates an engaging atmosphere that leaves a lasting impression on every guest.
+              Whether it is orchestrating high-octane sangeet celebrations or anchoring dignified corporate awards, Shubham ensures every moment on stage feels lively, memorable, and flawlessly managed.
             </p>
           </motion.div>
         </div>
@@ -80,15 +77,15 @@ const About = () => {
           {highlights.map((item, idx) => (
             <motion.div
               key={idx}
-              initial={{ y: 40, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: idx * 0.1, duration: 0.5 }}
-              className="bg-[#1C1438] border-2 border-[#FF007F]/40 p-6 rounded-3xl text-center space-y-3 hover:border-[#CCFF00] transition-all shadow-[0_5px_20px_rgba(0,0,0,0.4)]"
+              transition={{ delay: idx * 0.1 }}
+              className="bg-[#161F33]/40 border border-gray-800 p-6 rounded-2xl text-center space-y-3 hover:border-[#D4AF37]/50 transition-all"
             >
-              <div className="flex justify-center">{item.icon}</div>
-              <h3 className="text-xl font-black font-funky text-white">{item.title}</h3>
-              <p className="text-sm text-[#E2D9FF] font-normal">{item.desc}</p>
+              <div className="flex justify-center mb-2">{item.icon}</div>
+              <h3 className="text-lg font-bold text-white">{item.title}</h3>
+              <p className="text-sm text-gray-400 font-normal leading-relaxed">{item.desc}</p>
             </motion.div>
           ))}
         </div>

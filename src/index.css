@@ -1,30 +1,24 @@
 @import "tailwindcss";
 
-@layer base {
-  * {
-    font-family: 'Outfit', sans-serif !important;
-  }
-
-  body {
-    background-color: #0F0C20 !important;
-    color: #FFFFFF !important;
-  }
-
-  /* Force Change All Headings to Bold Funky Style */
-  h1, h2, h3, h4, h5, h6, .font-serif, .font-funky {
-    font-family: 'Fredoka', cursive, sans-serif !important;
-    letter-spacing: 0.03em;
-  }
+body {
+  font-family: 'Inter', sans-serif !important;
+  background-color: #0B0F19 !important;
+  color: #F3F4F6 !important;
 }
 
-/* Funky Custom Scrollbar */
+h1, h2, h3, h4, h5, h6, .font-funky, .font-serif {
+  font-family: 'Outfit', sans-serif !important;
+  letter-spacing: -0.01em;
+}
+
+/* Custom Gold Scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #0F0C20;
+  background: #0B0F19;
 }
 ::-webkit-scrollbar-thumb {
-  background: #FF007F;
+  background: #D4AF37;
   border-radius: 5px;
 }
