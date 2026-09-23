@@ -49,16 +49,16 @@ const Expertise = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Section Main Header */}
+        {/* Section Header */}
         <div className="text-center mb-16">
           <motion.h2
             initial={{ y: -40, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-4xl sm:text-6xl font-black font-funky tracking-wider text-[#CCFF00] drop-shadow-[0_4px_15px_rgba(204,255,0,0.3)]"
+            className="text-4xl sm:text-6xl font-black font-funky tracking-wider text-[#CCFF00] drop-shadow-[0_4px_15px_rgba(204,255,0,0.4)]"
           >
-            ᗰY E᙭ᑭEᖇTIᔕE
+            MY EXPERTISE
           </motion.h2>
           <motion.p
             initial={{ opacity: 0 }}
@@ -71,14 +71,14 @@ const Expertise = () => {
           </motion.p>
         </div>
 
-        {/* 5 Blocks Container */}
+        {/* 5 Cards Container */}
         <div className="space-y-16 lg:space-y-20">
           {expertiseData.map((item, index) => (
             <div
               key={item.id}
-              className="bg-[#1C1438] border-2 border-[#FF007F]/40 rounded-3xl p-6 sm:p-8 backdrop-blur-sm shadow-[0_10px_30px_rgba(0,0,0,0.5)] hover:border-[#CCFF00] transition-colors duration-300"
+              className="bg-[#1C1438] border-2 border-[#FF007F]/50 rounded-3xl p-6 sm:p-8 backdrop-blur-sm shadow-[0_10px_30px_rgba(0,0,0,0.6)] hover:border-[#CCFF00] transition-all duration-300"
             >
-              {/* 1. TOP: Jump from Top for Topic */}
+              {/* Card Title Header */}
               <motion.div
                 initial={{ y: -60, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
@@ -94,14 +94,14 @@ const Expertise = () => {
                 <h3 className="text-2xl sm:text-4xl font-extrabold font-funky text-[#FFFFFF] tracking-wide">
                   {item.title}
                 </h3>
-                <span className="text-[#CCFF00] font-black font-funky text-2xl bg-[#FF007F]/20 px-4 py-1 rounded-full border border-[#FF007F]/50">
+                <span className="text-[#CCFF00] font-black font-funky text-2xl bg-[#FF007F]/30 px-4 py-1 rounded-full border border-[#FF007F]">
                   0{index + 1}
                 </span>
               </motion.div>
 
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                 
-                {/* 2. LEFT: Jump from Left for Image with Black & White to Color Transition */}
+                {/* Image Section */}
                 <motion.div
                   initial={{ x: -120, opacity: 0, filter: 'grayscale(100%)' }}
                   whileInView={{ x: 0, opacity: 1, filter: 'grayscale(0%)' }}
@@ -111,7 +111,7 @@ const Expertise = () => {
                     opacity: { duration: 0.5, delay: 0.35 },
                     filter: { duration: 1.5, delay: 0.7, ease: 'easeInOut' },
                   }}
-                  className="w-full aspect-video rounded-2xl overflow-hidden shadow-2xl border-2 border-[#00E5FF]/50 group"
+                  className="w-full aspect-video rounded-2xl overflow-hidden shadow-2xl border-2 border-[#00E5FF]/60 group"
                 >
                   <img
                     src={item.image}
@@ -120,7 +120,7 @@ const Expertise = () => {
                   />
                 </motion.div>
 
-                {/* 3. RIGHT: Jump from Right for Content */}
+                {/* Description & Action Button */}
                 <motion.div
                   initial={{ x: 120, opacity: 0 }}
                   whileInView={{ x: 0, opacity: 1 }}
@@ -142,7 +142,7 @@ const Expertise = () => {
                       href="https://wa.me/916232091754"
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-block bg-[#CCFF00] hover:bg-[#FF007F] text-[#0F0C20] hover:text-[#FFFFFF] px-7 py-3 rounded-full font-black text-xs uppercase tracking-wider transition-all shadow-[0_0_15px_rgba(204,255,0,0.5)] hover:scale-105"
+                      className="inline-block bg-[#CCFF00] hover:bg-[#FF007F] text-[#0F0C20] hover:text-[#FFFFFF] px-7 py-3 rounded-full font-funky font-black text-xs uppercase tracking-wider transition-all shadow-[0_0_15px_rgba(204,255,0,0.6)] hover:scale-105"
                     >
                       Book For This Event
                     </a>
