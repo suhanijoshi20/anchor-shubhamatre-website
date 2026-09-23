@@ -1,47 +1,53 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { PartyPopper, Gamepad2, Flame } from 'lucide-react';
 
 const expertiseData = [
   {
     id: 1,
-    title: 'Luxury Weddings & Sangeet',
+    title: 'Luxury Weddings & Sangeet Battles',
     image: '/image/Image1.jpeg',
     description:
-      'Elevating royal wedding celebrations and high-energy sangeet nights with flawless stage timing, interactive guest engagement, and memorable hosting.',
+      'Elevating royal wedding celebrations and high-energy sangeet nights with dance face-offs, funny family awards, and non-stop stage energy.',
+    badge: 'PARTY MODE'
   },
   {
     id: 2,
-    title: 'Corporate Galas & Awards',
-    image: '/image/image2.jpeg',
+    title: 'Haldi, Mehendi & Crazy Stage Games',
+    image: '/image/image4.jpeg',
     description:
-      'Bringing professional sophistication, crisp presentation, and lively crowd interaction to corporate award shows, product launches, and summits.',
+      'Specialized fun games for Haldi & Mehendi! Featuring couple compatibility quizzes, bride vs groom squad challenges, flower shower games, and funny family banter to make pre-wedding events super interactive.',
+    badge: 'MOST POPULAR 💛'
   },
   {
     id: 3,
+    title: 'Corporate Galas & Fun Awards',
+    image: '/image/image2.jpeg',
+    description:
+      'Bringing professional sophistication mixed with witty ice-breaker games, team challenges, and lively crowd interaction to corporate summits.',
+    badge: 'CLASSY & FUN'
+  },
+  {
+    id: 4,
     title: 'Celebrity & Concert Hosting',
     image: '/image/image3.jpeg',
     description:
       'Commanding large arena audiences with high voltage energy, seamless celebrity intros, and unmatched stage presence for mega live concerts.',
-  },
-  {
-    id: 4,
-    title: 'Haldi, Mehendi & Ring Ceremony',
-    image: '/image/image4.jpeg',
-    description:
-      'Adding traditional charm, joyful games, and warm family bonding moments to make pre-wedding ceremonies intimately special.',
+    badge: 'ARENA ENERGY'
   },
   {
     id: 5,
-    title: 'Private Parties & Cultural Nights',
+    title: 'Private Parties & Ring Ceremony Fun',
     image: '/image/Image1.jpeg',
     description:
-      'Creating vibrant social vibes, engaging ice-breakers, and non-stop entertainment customized for exclusive private celebrations.',
+      'Creating vibrant social vibes, engaging interactive games, and non-stop entertainment customized for exclusive private celebrations.',
+    badge: 'EXCLUSIVE VIBES'
   },
 ];
 
 const Expertise = () => {
   return (
-    <section id="expertise" className="py-24 bg-[#FDFBF7] text-[#1E293B] overflow-hidden relative border-t-2 border-[#E2E8F0]">
+    <section id="expertise" className="py-24 bg-[#FDFBF7] text-[#1E293B] overflow-hidden relative border-t-4 border-[#1E293B]">
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
@@ -50,81 +56,44 @@ const Expertise = () => {
             initial={{ y: -40, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-4xl sm:text-6xl font-black font-funky tracking-wider text-[#1E293B]"
+            className="text-4xl sm:text-6xl font-black font-funky text-[#1E293B]"
           >
-            MY <span className="text-[#D4AF37]">EXPERTISE</span>
+            MY <span className="text-[#FF007F]">FUN EXPERTISE</span> 🎯
           </motion.h2>
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.3, duration: 0.6 }}
-            className="text-[#475569] mt-3 font-semibold tracking-wide text-base sm:text-lg"
-          >
-            Crafting Unforgettable Experiences Across Diverse Stages
-          </motion.p>
+          <p className="text-[#475569] mt-3 font-bold tracking-wide text-base sm:text-lg">
+            Turning Every Single Stage Into An Unforgettable Fun Festival
+          </p>
         </div>
 
         <div className="space-y-16 lg:space-y-20">
           {expertiseData.map((item, index) => (
             <div
               key={item.id}
-              className="bg-white border-2 border-[#E2E8F0] rounded-3xl p-6 sm:p-8 shadow-md hover:border-[#D4AF37] transition-all duration-300"
+              className="bg-white border-4 border-[#1E293B] rounded-3xl p-6 sm:p-8 shadow-xl hover:border-[#FF007F] transition-all duration-300 relative"
             >
-              <motion.div
-                initial={{ y: -60, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{
-                  type: 'spring',
-                  stiffness: 120,
-                  damping: 14,
-                  delay: 0.1,
-                }}
-                className="mb-6 border-b-2 border-[#E2E8F0] pb-4 flex items-center justify-between flex-wrap gap-2"
-              >
-                <h3 className="text-2xl sm:text-4xl font-extrabold font-funky text-[#1E293B] tracking-wide">
-                  {item.title}
-                </h3>
-                <span className="text-[#D4AF37] font-black font-funky text-2xl bg-[#FFFBEB] px-4 py-1 rounded-full border border-[#D4AF37]">
-                  0{index + 1}
+              <div className="mb-6 border-b-2 border-[#1E293B]/20 pb-4 flex items-center justify-between flex-wrap gap-2">
+                <div className="flex items-center gap-3">
+                  <h3 className="text-2xl sm:text-4xl font-black font-funky text-[#1E293B]">
+                    {item.title}
+                  </h3>
+                </div>
+                <span className="text-white font-black font-funky text-xs bg-[#FF007F] px-4 py-1.5 rounded-full border-2 border-[#1E293B] shadow-sm">
+                  {item.badge}
                 </span>
-              </motion.div>
+              </div>
 
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                 
-                <motion.div
-                  initial={{ x: -120, opacity: 0, filter: 'grayscale(100%)' }}
-                  whileInView={{ x: 0, opacity: 1, filter: 'grayscale(0%)' }}
-                  viewport={{ once: true }}
-                  transition={{
-                    x: { type: 'spring', stiffness: 100, damping: 14, delay: 0.35 },
-                    opacity: { duration: 0.5, delay: 0.35 },
-                    filter: { duration: 1.5, delay: 0.7, ease: 'easeInOut' },
-                  }}
-                  className="w-full aspect-video rounded-2xl overflow-hidden shadow-lg border-2 border-white group"
-                >
+                <div className="w-full aspect-video rounded-2xl overflow-hidden shadow-lg border-2 border-[#1E293B] group">
                   <img
                     src={item.image}
                     alt={item.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
-                </motion.div>
+                </div>
 
-                <motion.div
-                  initial={{ x: 120, opacity: 0 }}
-                  whileInView={{ x: 0, opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{
-                    type: 'spring',
-                    stiffness: 100,
-                    damping: 14,
-                    delay: 0.6,
-                  }}
-                  className="space-y-6"
-                >
-                  <p className="text-[#475569] text-base sm:text-lg leading-relaxed font-medium">
+                <div className="space-y-6">
+                  <p className="text-[#475569] text-base sm:text-lg leading-relaxed font-semibold">
                     {item.description}
                   </p>
 
@@ -133,12 +102,12 @@ const Expertise = () => {
                       href="https://wa.me/916232091754"
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-block bg-[#D4AF37] hover:bg-[#1E293B] text-white hover:text-[#D4AF37] px-7 py-3 rounded-full font-funky font-black text-xs uppercase tracking-wider transition-all shadow-md hover:scale-105"
+                      className="inline-block bg-[#D4AF37] hover:bg-[#FF007F] text-white px-7 py-3 rounded-full font-funky font-black text-xs uppercase tracking-wider transition-all shadow-md hover:scale-105 border-2 border-[#1E293B]"
                     >
-                      Book For This Event
+                      Book Fun Games For This Event 🎉
                     </a>
                   </div>
-                </motion.div>
+                </div>
 
               </div>
             </div>

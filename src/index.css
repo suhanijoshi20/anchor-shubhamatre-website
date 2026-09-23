@@ -4,14 +4,15 @@ body {
   font-family: 'Outfit', sans-serif !important;
   background-color: #FDFBF7 !important;
   color: #1E293B !important;
+  overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6, .font-funky {
   font-family: 'Fredoka', cursive, sans-serif !important;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.03em;
 }
 
-/* Custom Gold Scrollbar */
+/* Custom Colorful Scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -19,6 +20,6 @@ h1, h2, h3, h4, h5, h6, .font-funky {
   background: #FDFBF7;
 }
 ::-webkit-scrollbar-thumb {
-  background: #D4AF37;
+  background: linear-gradient(180deg, #FF007F, #D4AF37);
   border-radius: 5px;
 }

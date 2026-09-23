@@ -1,12 +1,22 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Calendar, Mic, Sparkles } from 'lucide-react';
+import { Calendar, Mic, Sparkles, PartyPopper, Flame } from 'lucide-react';
 
-const Hero = () => {
+const Hero = ({ onOpenOffer }) => {
   return (
-    <section id="home" className="relative min-h-screen pt-28 pb-16 flex items-center justify-center bg-[#FDFBF7] text-[#1E293B] overflow-hidden">
+    <section id="home" className="relative min-h-screen pt-28 pb-16 flex items-center justify-center text-white overflow-hidden">
       
-      <div className="absolute top-1/4 left-10 w-96 h-96 bg-[#FEF08A]/40 rounded-full blur-3xl pointer-events-none" />
+      {/* Background Image with Adjustable Opacity */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-all duration-500"
+        style={{ backgroundImage: `url('/image/Image1.jpeg')` }}
+      />
+      {/* Overlay Dark Tint for Opacity Adjustment */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#0B0F19]/90 via-[#0B0F19]/80 to-[#1E293B]/85" />
+
+      {/* Glow Effects */}
+      <div className="absolute top-1/4 left-10 w-96 h-96 bg-[#FF007F]/30 rounded-full blur-3xl pointer-events-none animate-pulse" />
+      <div className="absolute bottom-10 right-10 w-96 h-96 bg-[#D4AF37]/30 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -17,56 +27,56 @@ const Hero = () => {
             transition={{ duration: 0.8 }}
             className="space-y-6 text-center lg:text-left"
           >
-            <div className="inline-flex items-center gap-2 bg-[#FFFBEB] border-2 border-[#D4AF37] px-4 py-2 rounded-full shadow-sm">
-              <Sparkles className="w-4 h-4 text-[#D4AF37]" />
-              <span className="text-xs sm:text-sm font-bold tracking-widest text-[#B45309] uppercase">
-                India's Premium Stage Artist
+            <div className="inline-flex items-center gap-2 bg-[#FF007F] text-white border-2 border-white px-4 py-2 rounded-full shadow-lg transform -rotate-1">
+              <PartyPopper className="w-5 h-5 animate-bounce" />
+              <span className="text-xs sm:text-sm font-black tracking-widest font-funky uppercase">
+                India's Most Funky & Energetic Stage Anchor 🎉
               </span>
             </div>
 
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-[#1E293B] leading-tight font-funky">
-              Bringing Life To <br />
-              <span className="text-[#D4AF37]">
-                Every Grand Stage
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white leading-tight font-funky">
+              Zero Boring Rules! <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF007F] via-[#FFBF00] to-[#38BDF8]">
+                100% Non-Stop Masti & Games!
               </span>
             </h1>
 
-            <p className="text-base sm:text-lg text-[#475569] max-w-xl mx-auto lg:mx-0 font-medium leading-relaxed">
-              Elevating weddings, corporate galas, live concerts, and celebrity shows with high-energy hosting, unmatched crowd engagement, and unforgettable memories.
+            <p className="text-base sm:text-lg text-gray-200 max-w-xl mx-auto lg:mx-0 font-semibold leading-relaxed">
+              Turns weddings, sangeet, haldi games, and corporate shows into a mega festival of laughter, crazy stage games, and unforgettable energy!
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
               <a
                 href="https://wa.me/916232091754"
                 target="_blank"
                 rel="noreferrer"
-                className="w-full sm:w-auto bg-[#D4AF37] hover:bg-[#1E293B] text-white hover:text-[#D4AF37] px-8 py-4 rounded-full font-black font-funky text-xs uppercase tracking-wider transition-all transform hover:scale-105 shadow-md flex items-center justify-center gap-2"
+                className="w-full sm:w-auto bg-[#FF007F] hover:bg-[#D4AF37] text-white px-8 py-4 rounded-full font-black font-funky text-sm uppercase tracking-wider transition-all transform hover:scale-105 shadow-xl border-2 border-white flex items-center justify-center gap-2"
               >
                 <Calendar className="w-5 h-5" />
-                Book For Your Event
+                Book Your Show Now
               </a>
 
-              <a
-                href="#gallery"
-                className="w-full sm:w-auto border-2 border-[#1E293B] hover:border-[#D4AF37] text-[#1E293B] hover:text-[#D4AF37] px-8 py-4 rounded-full font-black font-funky text-xs uppercase tracking-wider transition-all transform hover:scale-105 flex items-center justify-center gap-2 bg-white"
+              <button
+                onClick={onOpenOffer}
+                className="w-full sm:w-auto bg-[#D4AF37] hover:bg-[#FF007F] text-[#1E293B] hover:text-white px-8 py-4 rounded-full font-black font-funky text-sm uppercase tracking-wider transition-all transform hover:scale-105 border-2 border-white flex items-center justify-center gap-2 shadow-lg"
               >
-                <Mic className="w-5 h-5" />
-                Explore Gallery
-              </a>
+                <Flame className="w-5 h-5 text-red-600 animate-pulse" />
+                Special Offers Pop-Up
+              </button>
             </div>
 
-            <div className="grid grid-cols-3 gap-4 pt-8 border-t-2 border-[#E2E8F0]">
-              <div>
-                <h3 className="text-2xl sm:text-4xl font-black text-[#D4AF37] font-funky">500+</h3>
-                <p className="text-xs sm:text-sm text-[#475569] font-bold uppercase">Shows Hosted</p>
+            <div className="grid grid-cols-3 gap-4 pt-8 border-t-2 border-white/20">
+              <div className="bg-white/10 backdrop-blur-md p-3 rounded-2xl border border-white/20 text-center">
+                <h3 className="text-2xl sm:text-4xl font-black text-[#FFBF00] font-funky">500+</h3>
+                <p className="text-xs sm:text-sm text-gray-200 font-bold uppercase">Mega Shows</p>
               </div>
-              <div>
-                <h3 className="text-2xl sm:text-4xl font-black text-[#1E293B] font-funky">100k+</h3>
-                <p className="text-xs sm:text-sm text-[#475569] font-bold uppercase">Happy Audience</p>
+              <div className="bg-white/10 backdrop-blur-md p-3 rounded-2xl border border-white/20 text-center">
+                <h3 className="text-2xl sm:text-4xl font-black text-[#FF007F] font-funky">100k+</h3>
+                <p className="text-xs sm:text-sm text-gray-200 font-bold uppercase">Crazy Fans</p>
               </div>
-              <div>
-                <h3 className="text-2xl sm:text-4xl font-black text-[#B38F24] font-funky">5+</h3>
-                <p className="text-xs sm:text-sm text-[#475569] font-bold uppercase">Years On Stage</p>
+              <div className="bg-white/10 backdrop-blur-md p-3 rounded-2xl border border-white/20 text-center">
+                <h3 className="text-2xl sm:text-4xl font-black text-[#38BDF8] font-funky">100%</h3>
+                <p className="text-xs sm:text-sm text-gray-200 font-bold uppercase">Masti Guaranteed</p>
               </div>
             </div>
           </motion.div>
@@ -77,12 +87,15 @@ const Hero = () => {
             transition={{ duration: 0.8 }}
             className="relative flex justify-center"
           >
-            <div className="relative w-full max-w-md aspect-[3/4] rounded-3xl overflow-hidden border-4 border-[#D4AF37] shadow-xl">
+            <div className="relative w-full max-w-md aspect-[3/4] rounded-3xl overflow-hidden border-4 border-[#FF007F] shadow-2xl transform rotate-2 hover:rotate-0 transition-transform">
               <img
                 src="/image/Image1.jpeg"
                 alt="Anchor Shubham Atre"
                 className="w-full h-full object-cover"
               />
+              <div className="absolute bottom-4 left-4 right-4 bg-[#1E293B]/90 backdrop-blur-md border-2 border-[#D4AF37] p-3 rounded-2xl text-center">
+                <p className="font-funky font-black text-sm text-[#FFBF00]">⚡ "No Boredom, Only High Voltage!"</p>
+              </div>
             </div>
           </motion.div>
 
