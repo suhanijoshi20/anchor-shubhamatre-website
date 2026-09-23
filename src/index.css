@@ -1,14 +1,14 @@
 @import "tailwindcss";
 
 body {
-  font-family: 'Inter', sans-serif !important;
+  font-family: 'Outfit', sans-serif !important;
   background-color: #FDFBF7 !important;
   color: #1E293B !important;
 }
 
-h1, h2, h3, h4, h5, h6, .font-funky, .font-serif {
-  font-family: 'Outfit', sans-serif !important;
-  letter-spacing: -0.01em;
+h1, h2, h3, h4, h5, h6, .font-funky {
+  font-family: 'Fredoka', cursive, sans-serif !important;
+  letter-spacing: 0.02em;
 }
 
 /* Custom Gold Scrollbar */

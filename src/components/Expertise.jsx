@@ -41,44 +41,37 @@ const expertiseData = [
 
 const Expertise = () => {
   return (
-    <section id="expertise" className="py-24 bg-[#0F0C20] text-[#FFFFFF] overflow-hidden relative">
+    <section id="expertise" className="py-24 bg-[#FDFBF7] text-[#1E293B] overflow-hidden relative border-t-2 border-[#E2E8F0]">
       
-      {/* Decorative Glow Elements */}
-      <div className="absolute top-10 left-[-50px] w-72 h-72 bg-[#FF007F]/20 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-10 right-[-50px] w-80 h-80 bg-[#00E5FF]/20 rounded-full blur-3xl pointer-events-none" />
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Section Header */}
         <div className="text-center mb-16">
           <motion.h2
             initial={{ y: -40, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-4xl sm:text-6xl font-black font-funky tracking-wider text-[#CCFF00] drop-shadow-[0_4px_15px_rgba(204,255,0,0.4)]"
+            className="text-4xl sm:text-6xl font-black font-funky tracking-wider text-[#1E293B]"
           >
-            MY EXPERTISE
+            MY <span className="text-[#D4AF37]">EXPERTISE</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3, duration: 0.6 }}
-            className="text-[#00E5FF] mt-3 font-semibold tracking-wide text-base sm:text-lg"
+            className="text-[#475569] mt-3 font-semibold tracking-wide text-base sm:text-lg"
           >
             Crafting Unforgettable Experiences Across Diverse Stages
           </motion.p>
         </div>
 
-        {/* 5 Cards Container */}
         <div className="space-y-16 lg:space-y-20">
           {expertiseData.map((item, index) => (
             <div
               key={item.id}
-              className="bg-[#1C1438] border-2 border-[#FF007F]/50 rounded-3xl p-6 sm:p-8 backdrop-blur-sm shadow-[0_10px_30px_rgba(0,0,0,0.6)] hover:border-[#CCFF00] transition-all duration-300"
+              className="bg-white border-2 border-[#E2E8F0] rounded-3xl p-6 sm:p-8 shadow-md hover:border-[#D4AF37] transition-all duration-300"
             >
-              {/* Card Title Header */}
               <motion.div
                 initial={{ y: -60, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
@@ -89,19 +82,18 @@ const Expertise = () => {
                   damping: 14,
                   delay: 0.1,
                 }}
-                className="mb-6 border-b-2 border-[#FF007F]/30 pb-4 flex items-center justify-between flex-wrap gap-2"
+                className="mb-6 border-b-2 border-[#E2E8F0] pb-4 flex items-center justify-between flex-wrap gap-2"
               >
-                <h3 className="text-2xl sm:text-4xl font-extrabold font-funky text-[#FFFFFF] tracking-wide">
+                <h3 className="text-2xl sm:text-4xl font-extrabold font-funky text-[#1E293B] tracking-wide">
                   {item.title}
                 </h3>
-                <span className="text-[#CCFF00] font-black font-funky text-2xl bg-[#FF007F]/30 px-4 py-1 rounded-full border border-[#FF007F]">
+                <span className="text-[#D4AF37] font-black font-funky text-2xl bg-[#FFFBEB] px-4 py-1 rounded-full border border-[#D4AF37]">
                   0{index + 1}
                 </span>
               </motion.div>
 
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                 
-                {/* Image Section */}
                 <motion.div
                   initial={{ x: -120, opacity: 0, filter: 'grayscale(100%)' }}
                   whileInView={{ x: 0, opacity: 1, filter: 'grayscale(0%)' }}
@@ -111,7 +103,7 @@ const Expertise = () => {
                     opacity: { duration: 0.5, delay: 0.35 },
                     filter: { duration: 1.5, delay: 0.7, ease: 'easeInOut' },
                   }}
-                  className="w-full aspect-video rounded-2xl overflow-hidden shadow-2xl border-2 border-[#00E5FF]/60 group"
+                  className="w-full aspect-video rounded-2xl overflow-hidden shadow-lg border-2 border-white group"
                 >
                   <img
                     src={item.image}
@@ -120,7 +112,6 @@ const Expertise = () => {
                   />
                 </motion.div>
 
-                {/* Description & Action Button */}
                 <motion.div
                   initial={{ x: 120, opacity: 0 }}
                   whileInView={{ x: 0, opacity: 1 }}
@@ -133,7 +124,7 @@ const Expertise = () => {
                   }}
                   className="space-y-6"
                 >
-                  <p className="text-[#E2D9FF] text-base sm:text-lg leading-relaxed font-medium">
+                  <p className="text-[#475569] text-base sm:text-lg leading-relaxed font-medium">
                     {item.description}
                   </p>
 
@@ -142,7 +133,7 @@ const Expertise = () => {
                       href="https://wa.me/916232091754"
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-block bg-[#CCFF00] hover:bg-[#FF007F] text-[#0F0C20] hover:text-[#FFFFFF] px-7 py-3 rounded-full font-funky font-black text-xs uppercase tracking-wider transition-all shadow-[0_0_15px_rgba(204,255,0,0.6)] hover:scale-105"
+                      className="inline-block bg-[#D4AF37] hover:bg-[#1E293B] text-white hover:text-[#D4AF37] px-7 py-3 rounded-full font-funky font-black text-xs uppercase tracking-wider transition-all shadow-md hover:scale-105"
                     >
                       Book For This Event
                     </a>
