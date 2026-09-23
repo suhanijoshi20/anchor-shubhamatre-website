@@ -1,222 +1,99 @@
-// import React, { useState, useEffect } from 'react';
-// import { MessageCircle, Phone, Sparkles } from 'lucide-react';
-// import { motion, useInView } from 'framer-motion';
-
-// // Number Count-Up Component
-// const Counter = ({ from = 0, to, duration = 2, suffix = "" }) => {
-//   const [count, setCount] = useState(from);
-//   const ref = React.useRef(null);
-//   const isInView = useInView(ref, { once: true });
-
-//   useEffect(() => {
-//     if (isInView) {
-//       let start = from;
-//       const end = parseInt(to);
-//       const totalSteps = 60;
-//       const increment = (end - start) / totalSteps;
-//       const stepTime = (duration * 1000) / totalSteps;
-
-//       const timer = setInterval(() => {
-//         start += increment;
-//         if (start >= end) {
-//           setCount(end);
-//           clearInterval(timer);
-//         } else {
-//           setCount(Math.floor(start));
-//         }
-//       }, stepTime);
-
-//       return () => clearInterval(timer);
-//     }
-//   }, [isInView, from, to, duration]);
-
-//   return <span ref={ref}>{count}{suffix}</span>;
-// };
-
-// const Hero = () => {
-//   return (
-//     <section id="home" className="relative min-h-screen flex items-center justify-center pt-20 bg-[#FFF5EA] text-[#260812] overflow-hidden">
-//       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10 text-center">
-        
-//         {/* Badge */}
-//         <motion.div 
-//           initial={{ opacity: 0, y: -20 }}
-//           animate={{ opacity: 1, y: 0 }}
-//           transition={{ duration: 0.6 }}
-//           className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-[#E8D5C4] bg-[#E8D5C4]/40 text-[#4A1022] text-xs sm:text-sm font-semibold mb-8 uppercase tracking-widest"
-//         >
-//           <Sparkles size={16} className="text-[#C98F8F]" />
-//           <span>Celebrity Anchor & Luxury Event Emcee • Indore</span>
-//         </motion.div>
-
-//         {/* Main Heading */}
-//         <motion.h1 
-//           initial={{ opacity: 0, y: 30 }}
-//           animate={{ opacity: 1, y: 0 }}
-//           transition={{ duration: 0.8, delay: 0.2 }}
-//           className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight mb-6 leading-tight text-[#4A1022]"
-//         >
-//           Transforming Events Into <br />
-//           <span className="italic text-[#C98F8F] font-normal">
-//             Unforgettable Memories
-//           </span>
-//         </motion.h1>
-
-//         {/* Subtitle */}
-//         <motion.p 
-//           initial={{ opacity: 0, y: 20 }}
-//           animate={{ opacity: 1, y: 0 }}
-//           transition={{ duration: 0.8, delay: 0.4 }}
-//           className="max-w-2xl mx-auto text-base sm:text-lg text-[#260812]/80 mb-10 leading-relaxed font-normal tracking-wide"
-//         >
-//           Corporate Shows • Celebrity Weddings • Concerts • High-Energy Sangeet Nights
-//         </motion.p>
-
-//         {/* Updated Call To Action Buttons */}
-//         <motion.div 
-//           initial={{ opacity: 0, scale: 0.95 }}
-//           animate={{ opacity: 1, scale: 1 }}
-//           transition={{ duration: 0.6, delay: 0.6 }}
-//           className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
-//         >
-//           <motion.a
-//             whileHover={{ scale: 1.05 }}
-//             whileTap={{ scale: 0.95 }}
-//             href="https://wa.me/916232091754?text=Hi%20Anchor%20Shubham,%20I%20want%20to%20book%20an%20event."
-//             target="_blank"
-//             rel="noopener noreferrer"
-//             className="w-full sm:w-auto flex items-center justify-center gap-3 bg-[#4A1022] text-[#FFF5EA] font-bold px-8 py-4 rounded-full shadow-lg tracking-wider text-sm uppercase"
-//           >
-//             <MessageCircle size={20} className="text-[#C98F8F]" />
-//             <span>Chat On WhatsApp</span>
-//           </motion.a>
-
-//           <motion.a
-//             whileHover={{ scale: 1.05 }}
-//             whileTap={{ scale: 0.95 }}
-//             href="tel:+916232091754"
-//             className="w-full sm:w-auto flex items-center justify-center gap-3 border-2 border-[#4A1022] text-[#4A1022] font-bold px-8 py-4 rounded-full tracking-wider text-sm uppercase"
-//           >
-//             <Phone size={18} className="text-[#C98F8F]" />
-//             <span>Direct Call</span>
-//           </motion.a>
-//         </motion.div>
-
-//         {/* Animated Stats Section */}
-//         <div className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-4xl mx-auto border-t border-[#E8D5C4] pt-10">
-          
-//           <motion.div 
-//             initial={{ scale: 0, opacity: 0 }}
-//             whileInView={{ scale: 1, opacity: 1 }}
-//             viewport={{ once: true }}
-//             transition={{ type: "spring", stiffness: 260, damping: 20, delay: 0.2 }}
-//             whileHover={{ scale: 1.05, y: -5 }}
-//             className="p-6 rounded-2xl bg-[#E8D5C4]/30 border-2 border-[#E8D5C4] shadow-md hover:border-[#C98F8F] transition-colors"
-//           >
-//             <div className="text-3xl sm:text-5xl font-extrabold text-[#4A1022]">
-//               <Counter to={500} suffix="+" />
-//             </div>
-//             <div className="text-xs sm:text-sm text-[#260812]/80 mt-2 font-semibold uppercase tracking-wider">
-//               Shows Hosted
-//             </div>
-//           </motion.div>
-
-//           <motion.div 
-//             initial={{ scale: 0, opacity: 0 }}
-//             whileInView={{ scale: 1, opacity: 1 }}
-//             viewport={{ once: true }}
-//             transition={{ type: "spring", stiffness: 260, damping: 20, delay: 0.4 }}
-//             whileHover={{ scale: 1.05, y: -5 }}
-//             className="p-6 rounded-2xl bg-[#E8D5C4]/30 border-2 border-[#E8D5C4] shadow-md hover:border-[#C98F8F] transition-colors"
-//           >
-//             <div className="text-3xl sm:text-5xl font-extrabold text-[#4A1022]">
-//               <Counter to={5} suffix="+" />
-//             </div>
-//             <div className="text-xs sm:text-sm text-[#260812]/80 mt-2 font-semibold uppercase tracking-wider">
-//               Years Experience
-//             </div>
-//           </motion.div>
-
-//           <motion.div 
-//             initial={{ scale: 0, opacity: 0 }}
-//             whileInView={{ scale: 1, opacity: 1 }}
-//             viewport={{ once: true }}
-//             transition={{ type: "spring", stiffness: 260, damping: 20, delay: 0.6 }}
-//             whileHover={{ scale: 1.05, y: -5 }}
-//             className="col-span-2 md:col-span-1 p-6 rounded-2xl bg-[#E8D5C4]/30 border-2 border-[#E8D5C4] shadow-md hover:border-[#C98F8F] transition-colors"
-//           >
-//             <div className="text-3xl sm:text-5xl font-extrabold text-[#4A1022]">
-//               <Counter to={100} suffix="%" />
-//             </div>
-//             <div className="text-xs sm:text-sm text-[#260812]/80 mt-2 font-semibold uppercase tracking-wider">
-//               Client Satisfaction
-//             </div>
-//           </motion.div>
-
-//         </div>
-
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default Hero;
-
-
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Sparkles, Calendar, Mic } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section id="home" className="relative w-full h-screen overflow-hidden flex items-center justify-center">
+    <section id="home" className="relative min-h-screen pt-28 pb-16 flex items-center justify-center bg-[#0F0C20] text-white overflow-hidden">
       
-      {/* 1. Fully Covered Background Image with Smooth B&W to Color Transition */}
-      <motion.div
-        initial={{ filter: 'grayscale(100%)' }}
-        animate={{ filter: 'grayscale(0%)' }}
-        transition={{ duration: 2.5, delay: 0.5, ease: 'easeInOut' }}
-        className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat z-0"
-        style={{
-          backgroundImage: `url('/images/Image1.jpeg')`, // <-- Apne folder aur image ka path yahan diya hai
-        }}
-      />
+      {/* Decorative Background Glow Orbs */}
+      <div className="absolute top-1/4 left-10 w-96 h-96 bg-[#FF007F]/20 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-10 right-10 w-96 h-96 bg-[#00E5FF]/20 rounded-full blur-3xl pointer-events-none" />
 
-      {/* 2. Dark Overlay */}
-      <div className="absolute inset-0 bg-black/40 z-10" />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          
+          {/* Left Text Column */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="space-y-6 text-center lg:text-left"
+          >
+            <div className="inline-flex items-center gap-2 bg-[#1C1438] border-2 border-[#FF007F] px-4 py-2 rounded-full shadow-[0_0_15px_rgba(255,0,127,0.4)]">
+              <Sparkles className="w-4 h-4 text-[#CCFF00]" />
+              <span className="text-xs sm:text-sm font-bold tracking-widest text-[#CCFF00] uppercase">
+                India's Premium Stage Artist
+              </span>
+            </div>
 
-      {/* 3. Hero Text */}
-      <div className="relative z-20 text-center px-4 max-w-4xl mx-auto">
-        <motion.h1
-          initial={{ y: 30, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-3xl sm:text-5xl md:text-6xl font-extrabold text-[#FFF5EA] tracking-wider mb-4 drop-shadow-lg"
-        >
-          ᗩᑎᑕᕼOᖇ ᔕᕼᑌᗷᕼᗩᗰ ᗩTᖇE
-        </motion.h1>
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-[#FFFFFF] leading-tight font-funky drop-shadow-md">
+              Bringing Life To <br />
+              <span className="text-[#CCFF00] drop-shadow-[0_4px_20px_rgba(204,255,0,0.4)]">
+                Every Grand Stage
+              </span>
+            </h1>
 
-        <motion.p
-          initial={{ y: 30, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-lg sm:text-2xl text-[#E8D5C4] font-medium tracking-wide mb-8"
-        >
-          Making Your Special Moments Unforgettable
-        </motion.p>
+            <p className="text-base sm:text-lg text-[#E2D9FF] max-w-xl mx-auto lg:mx-0 font-medium leading-relaxed">
+              Elevating weddings, corporate galas, live concerts, and celebrity shows with high-energy hosting, unmatched crowd engagement, and unforgettable memories.
+            </p>
 
-        <motion.a
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.6 }}
-          href="https://wa.me/916232091754"
-          target="_blank"
-          rel="noreferrer"
-          className="inline-block bg-[#C98F8F] hover:bg-[#D9A6A8] text-[#260812] px-8 py-3.5 rounded-full font-bold text-sm tracking-wider uppercase transition-all shadow-xl hover:scale-105"
-        >
-          ᖇEᔕEᖇᐯE YOᑌᖇ ᕴOᒪᗪEᑎ ᗪᗩTEᔕ
-        </motion.a>
+            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+              <a
+                href="https://wa.me/916232091754"
+                target="_blank"
+                rel="noreferrer"
+                className="w-full sm:w-auto bg-[#FF007F] hover:bg-[#CCFF00] text-[#0F0C20] hover:text-[#0F0C20] px-8 py-4 rounded-full font-black text-sm uppercase tracking-wider transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(255,0,127,0.7)] flex items-center justify-center gap-2"
+              >
+                <Calendar className="w-5 h-5" />
+                Book For Your Event
+              </a>
+
+              <a
+                href="#gallery"
+                className="w-full sm:w-auto border-2 border-[#00E5FF] hover:bg-[#00E5FF] text-[#00E5FF] hover:text-[#0F0C20] px-8 py-4 rounded-full font-black text-sm uppercase tracking-wider transition-all transform hover:scale-105 flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(0,229,255,0.4)]"
+              >
+                <Mic className="w-5 h-5" />
+                Explore Gallery
+              </a>
+            </div>
+
+            {/* Stats Counter Row */}
+            <div className="grid grid-cols-3 gap-4 pt-8 border-t-2 border-[#1C1438]">
+              <div>
+                <h3 className="text-2xl sm:text-4xl font-black text-[#CCFF00] font-funky">500+</h3>
+                <p className="text-xs sm:text-sm text-[#00E5FF] font-bold uppercase">Shows Hosted</p>
+              </div>
+              <div>
+                <h3 className="text-2xl sm:text-4xl font-black text-[#FF007F] font-funky">100k+</h3>
+                <p className="text-xs sm:text-sm text-[#00E5FF] font-bold uppercase">Happy Audience</p>
+              </div>
+              <div>
+                <h3 className="text-2xl sm:text-4xl font-black text-[#FFB800] font-funky">5+</h3>
+                <p className="text-xs sm:text-sm text-[#00E5FF] font-bold uppercase">Years On Stage</p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Right Image Feature */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+            className="relative flex justify-center"
+          >
+            <div className="relative w-full max-w-md aspect-[3/4] rounded-3xl overflow-hidden border-4 border-[#FF007F] shadow-[0_0_35px_rgba(255,0,127,0.5)]">
+              <img
+                src="/image/Image1.jpeg"
+                alt="Anchor Shubham Atre"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0F0C20] via-transparent to-transparent opacity-80" />
+            </div>
+          </motion.div>
+
+        </div>
       </div>
-
     </section>
   );
 };

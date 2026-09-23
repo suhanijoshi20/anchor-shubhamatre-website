@@ -1,20 +1,23 @@
 @import "tailwindcss";
 
 @layer base {
-  body {
+  * {
     font-family: 'Outfit', sans-serif !important;
+  }
+
+  body {
     background-color: #0F0C20 !important;
     color: #FFFFFF !important;
   }
 
-  /* Force Change All Headings to Funky Style */
-  h1, h2, h3, h4, h5, h6, .font-funky {
+  /* Force Change All Headings to Bold Funky Style */
+  h1, h2, h3, h4, h5, h6, .font-serif, .font-funky {
     font-family: 'Fredoka', cursive, sans-serif !important;
     letter-spacing: 0.03em;
   }
 }
 
-/* Funky Scrollbar */
+/* Funky Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
 }

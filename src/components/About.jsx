@@ -1,133 +1,96 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Award, Heart, Zap, UserCheck } from 'lucide-react';
 
 const About = () => {
+  const highlights = [
+    {
+      icon: <Zap className="w-8 h-8 text-[#CCFF00]" />,
+      title: 'High Voltage Energy',
+      desc: 'Keeps the audience dynamic and charged from start to finish.'
+    },
+    {
+      icon: <Heart className="w-8 h-8 text-[#FF007F]" />,
+      title: 'Personalized Touch',
+      desc: 'Tailors scripts and hosting style according to family & client preferences.'
+    },
+    {
+      icon: <Award className="w-8 h-8 text-[#00E5FF]" />,
+      title: 'Stage Excellence',
+      desc: 'Flawless crowd management with zero dull moments during live events.'
+    },
+    {
+      icon: <UserCheck className="w-8 h-8 text-[#FFB800]" />,
+      title: 'Versatile Hosting',
+      desc: 'Expertise in multi-genre events from royal weddings to corporate summits.'
+    }
+  ];
+
   return (
-    <section id="about" className="py-24 bg-[#260812] text-[#FFF5EA] overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="about" className="py-24 bg-[#0F0C20] text-white relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          
-          {/* ================= LEFT SIDE: 3 IMAGES COLLAGE ================= */}
-          <div className="relative w-full aspect-square max-w-md mx-auto lg:max-w-none flex items-center justify-center order-2 lg:order-1 my-6 lg:my-0">
-            
-            {/* Image 1 (Top Center) - Pehle Jump Karegi */}
-            <motion.div
-              initial={{ x: -120, y: -50, opacity: 0, scale: 0.7 }}
-              whileInView={{ x: 0, y: 0, opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{
-                type: 'spring',
-                stiffness: 120,
-                damping: 12,
-                delay: 0.6 // Sequence 2: Text ke baad 1st Image
-              }}
-              className="absolute top-0 w-3/5 h-1/2 rounded-2xl overflow-hidden shadow-2xl border-2 border-[#C98F8F]/40 z-20 group"
-            >
-              <img
-                src="/images/image2.jpeg"
-                alt="Anchor Shubham Atre Hosting"
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-              />
-            </motion.div>
-
-            {/* Image 2 (Bottom Left Overlapping) - Dusre No. Par Jump Karegi */}
-            <motion.div
-              initial={{ x: -150, y: 50, opacity: 0, scale: 0.7 }}
-              whileInView={{ x: 0, y: 0, opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{
-                type: 'spring',
-                stiffness: 120,
-                damping: 12,
-                delay: 0.8 // Sequence 3: 2nd Image
-              }}
-              className="absolute bottom-2 left-0 w-7/12 h-1/2 rounded-2xl overflow-hidden shadow-2xl border-2 border-[#C98F8F]/40 z-30 group"
-            >
-              <img
-                src="/images/image3.jpeg"
-                alt="Anchor Shubham Atre Event"
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-              />
-            </motion.div>
-
-            {/* Image 3 (Bottom Right Overlapping) - Teesre No. Par Jump Karegi */}
-            <motion.div
-              initial={{ x: -100, y: 80, opacity: 0, scale: 0.7 }}
-              whileInView={{ x: 0, y: 0, opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{
-                type: 'spring',
-                stiffness: 120,
-                damping: 12,
-                delay: 1.0 // Sequence 4: 3rd Image
-              }}
-              className="absolute bottom-2 right-0 w-7/12 h-1/2 rounded-2xl overflow-hidden shadow-2xl border-2 border-[#C98F8F]/40 z-10 group"
-            >
-              <img
-                src="/images/image4.jpeg"
-                alt="Anchor Shubham Atre Stage Presence"
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-              />
-            </motion.div>
-
-          </div>
-
-
-          {/* ================= RIGHT SIDE: TEXT CONTENT ================= */}
-          {/* Pehle Right Side Se Jump Karke Aayega */}
-          <motion.div
-            initial={{ x: 120, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
+        <div className="text-center mb-16">
+          <motion.h2
+            initial={{ y: -30, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
-            transition={{
-              type: 'spring',
-              stiffness: 100,
-              damping: 12,
-              delay: 0.2 // Sequence 1: Sabse Pehle Text
-            }}
-            className="order-1 lg:order-2 space-y-6 text-left"
+            transition={{ duration: 0.6 }}
+            className="text-4xl sm:text-6xl font-black font-funky text-[#CCFF00] drop-shadow-[0_4px_15px_rgba(204,255,0,0.3)]"
           >
-            <div className="inline-block px-4 py-1.5 rounded-full bg-[#4A1022] border border-[#C98F8F]/30 text-[#C98F8F] text-xs font-bold tracking-widest uppercase">
-              Meet The Host
-            </div>
+            ABOUT SHUBHAM
+          </motion.h2>
+          <p className="text-[#00E5FF] mt-3 font-semibold tracking-wide text-base sm:text-lg">
+            The Voice & Energy Behind Memorable Stage Stories
+          </p>
+        </div>
 
-            <h2 className="text-3xl sm:text-5xl font-extrabold text-[#FFF5EA] tracking-wider leading-tight">
-              ᗩᑎᑕᕼOᖇ ᔕᕼᑌᗷᕼᗩᗰ ᗩTᖇE
-            </h2>
-
-            <p className="text-[#E8D5C4] text-base sm:text-lg leading-relaxed">
-              Bringing boundless energy, high-class charisma, and seamless stage control to make every celebration truly extraordinary. With years of experience hosting luxury weddings, grand sangeet nights, corporate galas, and celebrity events.
-            </p>
-
-            <p className="text-[#D9A6A8] text-sm sm:text-base leading-relaxed">
-              Every moment is crafted to keep the audience captivated, smiling, and fully engaged from start to finish.
-            </p>
-
-            <div className="pt-4 flex flex-wrap items-center gap-6">
-              <div className="border-l-2 border-[#C98F8F] pl-4">
-                <h4 className="text-2xl font-bold text-[#FFF5EA]">500+</h4>
-                <p className="text-xs text-[#E8D5C4] uppercase tracking-wider">Shows Completed</p>
-              </div>
-
-              <div className="border-l-2 border-[#C98F8F] pl-4">
-                <h4 className="text-2xl font-bold text-[#FFF5EA]">100%</h4>
-                <p className="text-xs text-[#E8D5C4] uppercase tracking-wider">High Energy Guaranteed</p>
-              </div>
-            </div>
-
-            <div className="pt-2">
-              <a
-                href="https://wa.me/916232091754"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-block bg-[#C98F8F] hover:bg-[#D9A6A8] text-[#260812] px-7 py-3 rounded-full font-bold text-xs uppercase tracking-wider transition-all shadow-lg hover:scale-105"
-              >
-                ᖇEᔕEᖇᐯE YOᑌᖇ ᕴOᒪᗪEᑎ ᗪᗩTEᔕ
-              </a>
-            </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="rounded-3xl overflow-hidden border-4 border-[#00E5FF] shadow-[0_0_25px_rgba(0,229,255,0.4)]"
+          >
+            <img
+              src="/image/image2.jpeg"
+              alt="Shubham Atre Hosting"
+              className="w-full h-auto object-cover"
+            />
           </motion.div>
 
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="space-y-6 text-[#E2D9FF] text-base sm:text-lg leading-relaxed font-medium"
+          >
+            <p>
+              Anchor Shubham Atre is a renowned professional stage host known for his electrifying presence, witty humor, and flawless audience connection. With years of experience across luxury weddings, corporate galas, live music shows, and cultural nights, he brings a seamless blend of charm and professionalism.
+            </p>
+            <p>
+              Whether it is orchestrating high-energy sangeet performances or leading formal award ceremonies with dignity, Shubham creates an engaging atmosphere that leaves a lasting impression on every guest.
+            </p>
+          </motion.div>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {highlights.map((item, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ y: 40, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: idx * 0.1, duration: 0.5 }}
+              className="bg-[#1C1438] border-2 border-[#FF007F]/40 p-6 rounded-3xl text-center space-y-3 hover:border-[#CCFF00] transition-all shadow-[0_5px_20px_rgba(0,0,0,0.4)]"
+            >
+              <div className="flex justify-center">{item.icon}</div>
+              <h3 className="text-xl font-black font-funky text-white">{item.title}</h3>
+              <p className="text-sm text-[#E2D9FF] font-normal">{item.desc}</p>
+            </motion.div>
+          ))}
         </div>
 
       </div>
