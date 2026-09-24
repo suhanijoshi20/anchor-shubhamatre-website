@@ -9,7 +9,7 @@ const Hero = ({ onOpenOffer }) => {
       {/* Background Image with Adjustable Opacity */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-all duration-500"
-        style={{ backgroundImage: `url('/image/Image1.jpeg')` }}
+        style={{ backgroundImage: `url('/images/Image1.jpeg')` }}
       />
       {/* Overlay Dark Tint for Opacity Adjustment */}
       <div className="absolute inset-0 bg-gradient-to-r from-[#0B0F19]/90 via-[#0B0F19]/80 to-[#1E293B]/85" />

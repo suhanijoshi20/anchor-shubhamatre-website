@@ -110,7 +110,7 @@ const About = () => {
             className="rounded-3xl overflow-hidden border-4 border-[#1E293B] shadow-2xl transform -rotate-1 transition-all duration-300 relative group"
           >
             <img
-              src="/image/image2.jpeg"
+              src="/images/image2.jpeg"
               alt="Shubham Atre Hosting"
               className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
             />
