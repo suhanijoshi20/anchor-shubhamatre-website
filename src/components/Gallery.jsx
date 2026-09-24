@@ -9,145 +9,96 @@ const Gallery = () => {
     {
       src: '/images/Image1.jpeg',
       title: 'High-Energy Crowd Moments',
-      tag: 'Sangeet Night'
+      category: 'Sangeet Night'
     },
     {
       src: '/images/image2.jpeg',
       title: 'Stage Hosting & Mic Control',
-      tag: 'Anchor Shubham'
+      category: 'Anchor Live'
     },
     {
       src: '/images/image3.jpeg',
-      title: 'With The Beautiful Couple',
-      tag: 'Wedding Celebration'
+      title: 'Celebrations With Couple',
+      category: 'Wedding Day'
     },
     {
       src: '/images/image4.jpeg',
-      title: 'Haldi Board Presentation',
-      tag: 'Haldi Ceremony'
+      title: 'Haldi Ceremony Highlights',
+      category: 'Haldi Event'
     },
     {
       src: '/images/image5.jpeg',
       title: 'Interactive Crowd Banter',
-      tag: 'Family Games'
+      category: 'Family Fun'
     },
     {
       src: '/images/Image6.jpeg',
-      title: 'Live Stage Coordination',
-      tag: 'Grand Entry'
+      title: 'Grand Entry Coordination',
+      category: 'Special Moments'
     },
     {
       src: '/images/Image7.jpeg',
-      title: 'Unstoppable Celebrations',
-      tag: 'Party Energy'
+      title: 'Unstoppable Stage Energy',
+      category: 'After Party'
     }
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.12
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30, scale: 0.95 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] }
-    }
-  };
-
   return (
-    <section id="gallery" className="py-24 bg-[#1E293B] text-white relative overflow-hidden border-t-4 border-[#FF007F]">
+    <section id="gallery" className="py-20 bg-slate-900 text-slate-100 relative overflow-hidden">
       
-      {/* Background Ambient Glows */}
-      <div className="absolute top-1/4 left-[-100px] w-96 h-96 bg-[#FF007F]/20 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-1/4 right-[-100px] w-96 h-96 bg-[#D4AF37]/20 rounded-full blur-3xl pointer-events-none" />
+      {/* Background Soft Glow */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-96 bg-amber-500/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 bg-[#FF007F]/20 text-[#FF007F] px-4 py-1.5 rounded-full font-funky font-black text-xs uppercase mb-3 border border-[#FF007F]/30"
-          >
-            <Camera className="w-4 h-4" /> Visual Highlights
-          </motion.div>
+        {/* Clean Header */}
+        <div className="text-center max-w-2xl mx-auto mb-16">
+          <div className="inline-flex items-center gap-2 bg-amber-500/10 text-amber-400 border border-amber-500/20 px-3.5 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider mb-4">
+            <Camera className="w-4 h-4" /> Portfolio Highlights
+          </div>
 
-          <motion.h2
-            initial={{ opacity: 0, y: -20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl sm:text-6xl font-black font-funky"
-          >
-            EVENT <span className="text-[#FF007F]">GALLERY</span> 📸
-          </motion.h2>
+          <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-white">
+            Event <span className="text-amber-400">Gallery</span>
+          </h2>
 
-          <motion.p
-            initial={{ opacity: 0, y: -10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-slate-300 mt-3 font-semibold text-base sm:text-lg max-w-2xl mx-auto"
-          >
-            Real smiles, real high energy, and unforgettable memories captured live on stage!
-          </motion.p>
+          <p className="text-slate-400 mt-4 text-base sm:text-lg">
+            A glimpse into live stage performances, interactive hosting, and unforgettable celebrations.
+          </p>
         </div>
 
-        {/* Responsive Grid Layout */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
-        >
+        {/* Professional Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {images.map((img, index) => (
             <motion.div
               key={index}
-              variants={itemVariants}
-              whileHover={{ y: -8 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.08 }}
               onClick={() => setSelectedImage(img)}
-              className="group relative rounded-3xl overflow-hidden border-4 border-[#334155] bg-slate-800 shadow-xl cursor-pointer hover:border-[#FF007F] transition-all duration-300"
+              className="group relative rounded-2xl overflow-hidden bg-slate-800/80 border border-slate-700/60 shadow-lg hover:shadow-2xl hover:border-amber-500/40 cursor-pointer transition-all duration-300"
             >
-              {/* Image Container with Black & White to Smooth Color transition */}
               <div className="aspect-[4/3] w-full overflow-hidden relative">
-                <motion.img
+                <img
                   src={img.src}
                   alt={img.title}
-                  initial={{ filter: "grayscale(100%)", scale: 1 }}
-                  whileInView={{ filter: "grayscale(0%)" }}
-                  viewport={{ once: false, amount: 0.3 }}
-                  transition={{ duration: 1.2, ease: "easeInOut" }}
-                  whileHover={{ scale: 1.1, filter: "grayscale(0%)" }}
-                  className="w-full h-full object-cover transition-transform duration-700 ease-out"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
                   loading="lazy"
                 />
                 
-                {/* Overlay Glow & Content */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1E293B] via-[#1E293B]/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-6">
+                {/* Subtle Hover Gradient & Information */}
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-6">
                   <div className="flex justify-end">
-                    <span className="p-2 bg-white/10 backdrop-blur-md rounded-full text-white">
-                      <Maximize2 className="w-5 h-5" />
+                    <span className="p-2 bg-slate-900/80 backdrop-blur-md rounded-full text-white border border-slate-700">
+                      <Maximize2 className="w-4 h-4" />
                     </span>
                   </div>
 
                   <div>
-                    <span className="inline-block bg-[#FF007F] text-white text-[10px] font-black font-funky px-3 py-1 rounded-full uppercase tracking-wider mb-2">
-                      {img.tag}
+                    <span className="inline-block bg-amber-500/20 border border-amber-500/30 text-amber-300 text-xs font-medium px-2.5 py-1 rounded-md mb-2">
+                      {img.category}
                     </span>
-                    <h3 className="text-lg font-black font-funky text-white leading-snug">
+                    <h3 className="text-base font-semibold text-white">
                       {img.title}
                     </h3>
                   </div>
@@ -155,11 +106,11 @@ const Gallery = () => {
               </div>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
 
       </div>
 
-      {/* Fullscreen Image Preview Lightbox Modal */}
+      {/* Clean Fullscreen Modal */}
       <AnimatePresence>
         {selectedImage && (
           <motion.div
@@ -167,41 +118,41 @@ const Gallery = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setSelectedImage(null)}
-            className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4 sm:p-8"
+            className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 sm:p-6"
           >
             <motion.div
-              initial={{ scale: 0.8, opacity: 0 }}
+              initial={{ scale: 0.95, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.8, opacity: 0 }}
+              exit={{ scale: 0.95, opacity: 0 }}
               onClick={(e) => e.stopPropagation()}
-              className="relative max-w-5xl w-full bg-[#1E293B] border-4 border-[#FF007F] rounded-3xl overflow-hidden shadow-2xl"
+              className="relative max-w-4xl w-full bg-slate-900 border border-slate-700 rounded-2xl overflow-hidden shadow-2xl"
             >
               <button
                 onClick={() => setSelectedImage(null)}
-                className="absolute top-4 right-4 z-10 bg-[#FF007F] text-white p-2 rounded-full hover:bg-[#D4AF37] transition-colors"
+                className="absolute top-4 right-4 z-10 bg-slate-800 text-slate-300 p-2 rounded-full hover:bg-slate-700 hover:text-white transition-colors border border-slate-600"
               >
-                <X className="w-6 h-6" />
+                <X className="w-5 h-5" />
               </button>
 
-              <div className="max-h-[80vh] overflow-hidden flex items-center justify-center bg-black">
+              <div className="max-h-[75vh] flex items-center justify-center bg-black/50">
                 <img
                   src={selectedImage.src}
                   alt={selectedImage.title}
-                  className="max-h-[80vh] w-auto object-contain grayscale-0"
+                  className="max-h-[75vh] w-auto object-contain"
                 />
               </div>
 
-              <div className="p-6 bg-[#1E293B] border-t-2 border-slate-700 flex items-center justify-between">
+              <div className="p-5 bg-slate-900 border-t border-slate-800 flex items-center justify-between">
                 <div>
-                  <span className="text-[#D4AF37] text-xs font-black font-funky uppercase tracking-wider">
-                    {selectedImage.tag}
+                  <span className="text-amber-400 text-xs font-medium uppercase tracking-wider">
+                    {selectedImage.category}
                   </span>
-                  <h3 className="text-xl font-black font-funky text-white mt-0.5">
+                  <h3 className="text-lg font-semibold text-white mt-0.5">
                     {selectedImage.title}
                   </h3>
                 </div>
-                <div className="flex items-center gap-1 text-[#FF007F] font-funky text-sm">
-                  <Sparkles className="w-4 h-4" /> Live Event
+                <div className="flex items-center gap-1.5 text-slate-400 text-xs font-medium">
+                  <Sparkles className="w-4 h-4 text-amber-400" /> Live Event Photo
                 </div>
               </div>
             </motion.div>
