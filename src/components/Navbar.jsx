@@ -1,133 +1,174 @@
 import React, { useState, useEffect } from 'react';
+import { Menu, X, Sparkles, Tag } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { Mic, Menu, X } from 'lucide-react';
 
-const Navbar = () => {
+const SMicBadgeLarge = () => (
+  <svg
+    viewBox="0 0 48 48"
+    width="44"
+    height="44"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className="drop-shadow-md"
+  >
+    <circle cx="24" cy="24" r="22" fill="#FF007F" stroke="#1E293B" strokeWidth="2" />
+    <rect x="19" y="8" width="10" height="13" rx="5" fill="#FFFFFF" stroke="#1E293B" strokeWidth="1.5" />
+    <line x1="19" y1="11" x2="29" y2="11" stroke="#1E293B" strokeWidth="1.5" />
+    <line x1="19" y1="15" x2="29" y2="15" stroke="#1E293B" strokeWidth="1.5" />
+    <rect x="18" y="20" width="12" height="3" rx="0.5" fill="#D4AF37" />
+    <path d="M20 23L21 30H27L28 23H20Z" fill="#1E293B" stroke="#FF007F" strokeWidth="1" />
+    <rect x="22.5" y="30" width="3" height="2.5" fill="#FFFFFF" />
+    <path
+      d="M24 32.5 C30 33.5, 30 37, 24 38 C18 39, 18 42.5, 24 43.5"
+      stroke="#1E293B"
+      strokeWidth="3"
+      strokeLinecap="round"
+      fill="none"
+    />
+  </svg>
+);
+
+const Navbar = ({ onOpenOffer }) => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 20) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 20);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const navLinks = [
+    { name: 'START HERE', href: '#home' },
+    { name: 'OFFERS 🔥', href: '#offers' },
+    { name: 'ABOUT', href: '#about' },
+    { name: 'FUN EXPERTISE', href: '#expertise' },
+    { name: 'GALLERY', href: '#gallery' },
+    { name: 'CONTACT', href: '#contact' },
+  ];
+
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 w-full z-40 transition-all duration-300 ${
         isScrolled
-          ? 'bg-slate-950/90 backdrop-blur-md border-b border-slate-800 py-3 shadow-lg'
+          ? 'bg-[#FDFBF7]/95 backdrop-blur-md border-b-4 border-[#FF007F] py-3 shadow-lg'
           : 'bg-transparent py-5'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-        
-        {/* Animated Brand Logo & Mic */}
-        <a href="#" className="flex items-center gap-3 group">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between">
           
-          {/* Mic Icon: Left se Jump karte hue aayega */}
-          <motion.div
-            initial={{ opacity: 0, x: -60, rotate: -20 }}
-            animate={{ opacity: 1, x: 0, rotate: 0 }}
-            transition={{
-              type: 'spring',
-              stiffness: 260,
-              damping: 18,
-              delay: 0.1
-            }}
-            className="p-2 bg-amber-500/10 border border-amber-500/30 text-amber-400 rounded-xl group-hover:bg-amber-500 group-hover:text-slate-950 transition-colors"
-          >
-            <Mic className="w-6 h-6" />
-          </motion.div>
+          <a href="#home" className="flex items-center gap-3 group">
+            {/* Mic Icon Left Se Jump Hote Hue Aaye Aur Uske Baad Continuous Shake Ho */}
+            <motion.div
+              initial={{ opacity: 0, x: -100 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{
+                type: 'spring',
+                stiffness: 260,
+                damping: 18,
+                delay: 0.1
+              }}
+              className="flex items-center justify-center cursor-pointer shrink-0"
+            >
+              <motion.div
+                animate={{ rotate: [0, -10, 10, -10, 0] }}
+                transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
+              >
+                <SMicBadgeLarge />
+              </motion.div>
+            </motion.div>
 
-          {/* Logo Text: Top se Jump karte hue aayega */}
-          <motion.div
-            initial={{ opacity: 0, y: -50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{
-              type: 'spring',
-              stiffness: 220,
-              damping: 16,
-              delay: 0.2
-            }}
-            className="flex flex-col"
-          >
-            <span className="text-lg sm:text-xl font-bold tracking-tight text-white group-hover:text-amber-400 transition-colors">
-              Anchor Shubham Atre
-            </span>
-            <span className="text-[10px] uppercase tracking-widest text-slate-400 font-semibold -mt-1">
-              Celebrity Anchor & Host
-            </span>
-          </motion.div>
-
-        </a>
-
-        {/* Desktop Navigation Links */}
-        <div className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
-          <a href="#about" className="hover:text-amber-400 transition-colors">About</a>
-          <a href="#gallery" className="hover:text-amber-400 transition-colors">Gallery</a>
-          <a href="#services" className="hover:text-amber-400 transition-colors">Services</a>
-          <a href="#contact" className="hover:text-amber-400 transition-colors">Contact</a>
-        </div>
-
-        {/* Book Now Action Button */}
-        <div className="hidden md:block">
-          <a
-            href="#contact"
-            className="bg-amber-500 hover:bg-amber-400 text-slate-950 font-semibold text-xs uppercase tracking-wider px-4 py-2.5 rounded-xl transition-all shadow-md shadow-amber-500/10"
-          >
-            Book Event
+            {/* Title Text Top Se Jump Hote Hue Niche Aaye */}
+            <motion.span
+              initial={{ opacity: 0, y: -80 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                type: 'spring',
+                stiffness: 220,
+                damping: 16,
+                delay: 0.25
+              }}
+              className="text-xl sm:text-2xl font-black font-funky tracking-wider text-[#1E293B]"
+            >
+              ANCHOR <span className="text-[#FF007F]">SHUBHAM</span> <span className="text-[#D4AF37]">ATRE</span>
+            </motion.span>
           </a>
+
+          <div className="hidden lg:flex items-center space-x-5">
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                className="text-xs sm:text-sm font-funky tracking-widest font-black transition-all duration-200 text-[#1E293B] hover:text-[#FF007F] hover:scale-110"
+              >
+                {link.name}
+              </a>
+            ))}
+
+            <button
+              onClick={onOpenOffer}
+              className="flex items-center gap-1 bg-gradient-to-r from-[#FF007F] to-[#8B5CF6] text-white px-4 py-2 rounded-full font-funky font-black text-xs uppercase tracking-wider animate-pulse hover:scale-105 transition-all shadow-md"
+            >
+              <Tag className="w-4 h-4" /> Claim Offer
+            </button>
+            
+            <a
+              href="https://wa.me/916232091754"
+              target="_blank"
+              rel="noreferrer"
+              className="bg-[#D4AF37] hover:bg-[#FF007F] text-white px-5 py-2.5 rounded-full font-funky font-black text-xs uppercase tracking-wider transition-all transform hover:scale-105 shadow-md border-2 border-[#1E293B]"
+            >
+              Book Fun Dates 🎉
+            </a>
+          </div>
+
+          <div className="lg:hidden flex items-center gap-2">
+            <button
+              onClick={onOpenOffer}
+              className="p-2 bg-[#FF007F] text-white rounded-full font-funky font-bold text-xs"
+            >
+              🔥 Offer
+            </button>
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="text-[#FF007F] focus:outline-none"
+            >
+              {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+            </button>
+          </div>
+
         </div>
-
-        {/* Mobile Menu Toggle */}
-        <button
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden text-slate-300 hover:text-white p-2"
-        >
-          {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
-
       </div>
 
-      {/* Mobile Dropdown Menu */}
-      {mobileMenuOpen && (
-        <div className="md:hidden bg-slate-950 border-b border-slate-800 px-4 pt-2 pb-6 space-y-4">
+      {isMobileMenuOpen && (
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="lg:hidden bg-[#FDFBF7] border-b-4 border-[#FF007F] px-4 pt-4 pb-6 space-y-3"
+        >
+          {navLinks.map((link) => (
+            <a
+              key={link.name}
+              href={link.href}
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="block text-[#1E293B] hover:text-[#FF007F] font-funky font-black text-base py-2 tracking-wider"
+            >
+              {link.name}
+            </a>
+          ))}
           <a
-            href="#about"
-            onClick={() => setMobileMenuOpen(false)}
-            className="block text-slate-300 hover:text-amber-400 font-medium text-base py-1"
+            href="https://wa.me/916232091754"
+            target="_blank"
+            rel="noreferrer"
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="block text-center bg-[#FF007F] text-white py-3 rounded-full font-funky font-black text-sm uppercase tracking-wider mt-4"
           >
-            About
+            Book Fun Dates 🎉
           </a>
-          <a
-            href="#gallery"
-            onClick={() => setMobileMenuOpen(false)}
-            className="block text-slate-300 hover:text-amber-400 font-medium text-base py-1"
-          >
-            Gallery
-          </a>
-          <a
-            href="#services"
-            onClick={() => setMobileMenuOpen(false)}
-            className="block text-slate-300 hover:text-amber-400 font-medium text-base py-1"
-          >
-            Services
-          </a>
-          <a
-            href="#contact"
-            onClick={() => setMobileMenuOpen(false)}
-            className="block text-slate-300 hover:text-amber-400 font-medium text-base py-1"
-          >
-            Contact
-          </a>
-        </div>
+        </motion.div>
       )}
     </nav>
   );
