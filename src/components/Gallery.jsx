@@ -5,7 +5,6 @@ import { Camera, Sparkles, X, Maximize2 } from 'lucide-react';
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState(null);
 
-  // Path to images inside public/images/
   const images = [
     {
       src: '/images/Image1.jpeg',
@@ -106,7 +105,7 @@ const Gallery = () => {
           </motion.p>
         </div>
 
-        {/* Responsive Masonry / Grid Layout */}
+        {/* Responsive Grid Layout */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -122,12 +121,17 @@ const Gallery = () => {
               onClick={() => setSelectedImage(img)}
               className="group relative rounded-3xl overflow-hidden border-4 border-[#334155] bg-slate-800 shadow-xl cursor-pointer hover:border-[#FF007F] transition-all duration-300"
             >
-              {/* Image Container */}
+              {/* Image Container with Black & White to Smooth Color transition */}
               <div className="aspect-[4/3] w-full overflow-hidden relative">
-                <img
+                <motion.img
                   src={img.src}
                   alt={img.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+                  initial={{ filter: "grayscale(100%)", scale: 1 }}
+                  whileInView={{ filter: "grayscale(0%)" }}
+                  viewport={{ once: false, amount: 0.3 }}
+                  transition={{ duration: 1.2, ease: "easeInOut" }}
+                  whileHover={{ scale: 1.1, filter: "grayscale(0%)" }}
+                  className="w-full h-full object-cover transition-transform duration-700 ease-out"
                   loading="lazy"
                 />
                 
@@ -183,7 +187,7 @@ const Gallery = () => {
                 <img
                   src={selectedImage.src}
                   alt={selectedImage.title}
-                  className="max-h-[80vh] w-auto object-contain"
+                  className="max-h-[80vh] w-auto object-contain grayscale-0"
                 />
               </div>
 
