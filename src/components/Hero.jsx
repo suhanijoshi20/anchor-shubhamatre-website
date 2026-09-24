@@ -89,7 +89,7 @@ const Hero = ({ onOpenOffer }) => {
           >
             <div className="relative w-full max-w-md aspect-[3/4] rounded-3xl overflow-hidden border-4 border-[#FF007F] shadow-2xl transform rotate-2 hover:rotate-0 transition-transform">
               <img
-                src="/image/Image1.jpeg"
+                src="/images/Image1.jpeg"
                 alt="Anchor Shubham Atre"
                 className="w-full h-full object-cover"
               />
