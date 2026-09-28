@@ -27,22 +27,25 @@ const Hero = ({ onOpenOffer }) => {
             transition={{ duration: 0.8 }}
             className="space-y-6 text-center lg:text-left"
           >
+            {/* SEO Location Badge */}
             <div className="inline-flex items-center gap-2 bg-[#FF007F] text-white border-2 border-white px-4 py-2 rounded-full shadow-lg transform -rotate-1">
               <PartyPopper className="w-5 h-5 animate-bounce" />
               <span className="text-xs sm:text-sm font-black tracking-widest font-funky uppercase">
-                India's Most Funky & Energetic Stage Anchor 🎉
+                🏆 Best Anchor in Indore & Stage Host 🎉
               </span>
             </div>
 
+            {/* SEO H1 Tag with Main Keywords */}
             <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white leading-tight font-funky">
-              Zero Boring Rules! <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF007F] via-[#FFBF00] to-[#38BDF8]">
-                100% Non-Stop Masti & Games!
+              ANCHOR <span className="text-[#FFBF00]">SHUBHAM</span> <span className="text-[#FF007F]">ATRE</span> <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF007F] via-[#FFBF00] to-[#38BDF8] text-2xl sm:text-4xl lg:text-5xl block mt-2">
+                Top Wedding & Corporate Host in Indore
               </span>
             </h1>
 
+            {/* SEO Description Paragraph */}
             <p className="text-base sm:text-lg text-gray-200 max-w-xl mx-auto lg:mx-0 font-semibold leading-relaxed">
-              Turns weddings, sangeet, haldi games, and corporate shows into a mega festival of laughter, crazy stage games, and unforgettable energy!
+              Looking for the <strong className="text-[#FFBF00]">Best Anchor in Indore</strong>? Anchor Shubham Atre turns weddings, sangeet, haldi games, and corporate shows into a mega festival of laughter, crazy stage games, and 100% non-stop energy!
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
@@ -90,7 +93,7 @@ const Hero = ({ onOpenOffer }) => {
             <div className="relative w-full max-w-md aspect-[3/4] rounded-3xl overflow-hidden border-4 border-[#FF007F] shadow-2xl transform rotate-2 hover:rotate-0 transition-transform">
               <img
                 src="/images/Image1.jpeg"
-                alt="Anchor Shubham Atre"
+                alt="Anchor Shubham Atre - Best Anchor in Indore for Wedding and Sangeet"
                 className="w-full h-full object-cover"
               />
               <div className="absolute bottom-4 left-4 right-4 bg-[#1E293B]/90 backdrop-blur-md border-2 border-[#D4AF37] p-3 rounded-2xl text-center">
